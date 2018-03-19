@@ -30,67 +30,67 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Usuario" name="user" value="{{ old('user') }}"/>
+                            <input type="text" class="form-control" placeholder="Usuario" name="user" value="{{ old('user') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Password" name="password"/>
+                            <input type="password" class="form-control" placeholder="Password" name="password" autocomplete="off" />
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="password" class="form-control" placeholder="Repetir password" name="password_confirmation"/>
+                            <input type="password" class="form-control" placeholder="Repetir password" name="password_confirmation" autocomplete="off" />
                             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="CURP" name="CURP" value="{{ old('CURP') }}"/>
+                            <input type="text" class="form-control" placeholder="CURP" name="CURP" value="{{ old('CURP') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-barcode form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Nombre(s)" name="nombre" value="{{ old('nombre') }}"/>
+                            <input type="text" class="form-control" placeholder="Nombre(s)" name="nombre" value="{{ old('nombre') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Apellido paterno" name="apPat" value="{{ old('apPat') }}"/>
+                            <input type="text" class="form-control" placeholder="Apellido paterno" name="apPat" value="{{ old('apPat') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Apellido materno" name="apMat" value="{{ old('apMat') }}"/>
+                            <input type="text" class="form-control" placeholder="Apellido materno" name="apMat" value="{{ old('apMat') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-pencil form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="RFC (si cuenta con uno)" name="RFC" value="{{ old('RFC') }}"/>
+                            <input type="text" class="form-control" placeholder="RFC (si cuenta con uno)" name="RFC" value="{{ old('RFC') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-barcode form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="telefono" name="telefono" value="{{ old('telefono') }}"/>
+                            <input type="text" class="form-control" placeholder="telefono" name="telefono" value="{{ old('telefono') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-earphone form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="email" class="form-control" placeholder="Correo El&eacute;ctronico" name="email" value="{{ old('email') }}"/>
+                            <input type="email" class="form-control" placeholder="Correo El&eacute;ctronico" name="email" value="{{ old('email') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="date" class="form-control" placeholder="Fecha de nacimiento" name="fechaNac" value="{{ old('fechaNac') }}"/>
+                            <input type="date" class="form-control" placeholder="Fecha de nacimiento" name="fechaNac" value="{{ old('fechaNac') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
                         </div>
                     </div>
@@ -114,19 +114,19 @@
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="# de casa" name="numCasa" value="{{ old('numCasa') }}"/>
+                            <input type="text" class="form-control" placeholder="# de casa" name="numCasa" value="{{ old('numCasa') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-home form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Calle" name="calle" value="{{ old('calle') }}"/>
+                            <input type="text" class="form-control" placeholder="Calle" name="calle" value="{{ old('calle') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-road form-control-feedback"></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group has-feedback">
-                            <input type="text" class="form-control" placeholder="Colonia" name="colonia" value="{{ old('colonia') }}"/>
+                            <input type="text" class="form-control" placeholder="Colonia" name="colonia" value="{{ old('colonia') }}" autocomplete="off" />
                             <span class="glyphicon glyphicon-screenshot form-control-feedback"></span>
                         </div>
                     </div>

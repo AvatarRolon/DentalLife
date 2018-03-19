@@ -20,7 +20,9 @@ class CreateCitasTable extends Migration
             //Campos de la tabla citas
             $table->date('fecha');
             $table->timestamp('horaI');
-            $table->timestamp('horaF');
+
+            //Agregar parametro ->nullable() para que la migración no falle
+            $table->timestamp('horaF')->nullable();
             $table->string('estado', 15);
 
             //Llaves foraneas
