@@ -28,13 +28,13 @@
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col">
-				<div class="box box-solid box-primary">
+				<div class="box box-solid box-cream">
 				    <div class="box-header with-border">	
 				    	<i class="glyphicon glyphicon-list"></i>			          
 				        <h3 class="box-title">Pacientes</h3>
 				    </div>			    
 				    <div class="box-body">	
-				        <table class="table table-striped table-hover" id="TablaPaavi">
+				        <table class="table table-striped table-hover table-responsive" id="TablaPaavi">
                           <thead>
                             <tr>
                                 <th class="text-center">ID</th>                                

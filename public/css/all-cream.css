@@ -1,0 +1,19 @@
+/*
+ * Tema Cream para la personalización de DentalLife
+*/
+
+.box.box-cream {
+  border-top-color: #20B2AA;
+}
+.box.box-solid.box-cream {
+  border: 1px solid #20B2AA;
+}
+.box.box-solid.box-cream > .box-header {
+  color: #fff;
+  background: #20B2AA;
+  background-color: #20B2AA;
+}
+.box.box-solid.box-cream > .box-header a,
+.box.box-solid.box-cream > .box-header .btn {
+  color: #fff;
+}

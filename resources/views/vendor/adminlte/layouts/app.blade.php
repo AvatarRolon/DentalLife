@@ -21,6 +21,7 @@ desired effect
 |               | skin-yellow                             |
 |               | skin-red                                |
 |               | skin-green                              |
+|               | skin-cream
 |---------------------------------------------------------|
 |LAYOUT OPTIONS | fixed                                   |
 |               | layout-boxed                            |
@@ -29,7 +30,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-blue sidebar-mini">
+<body class="skin-cream sidebar-mini">
 <div id="app">
     <div class="wrapper">
 
