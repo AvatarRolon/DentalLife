@@ -8,7 +8,7 @@
         @if (! Auth::guest())
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="{{ Gravatar::get($user->email) }}" class="img-circle" alt="User Image" />
+                    <img src="{{ asset('img/ico-man.png') }}" class="img-circle" alt="User Image" />
                 </div>
                 <div class="pull-left info">
                     <p>{{ Auth::user()->user }}</p>
@@ -34,15 +34,13 @@
             <li class="header">Opciones</li>
             <!-- Optionally, you can add icons to the links -->
             <li><a href="{{ url('home') }}"><i class='fa fa-home'></i> <span>{{ trans('adminlte_lang::message.home') }}</span></a></li>
-            <li><a href="{{ url('pacientes') }}" ><i class='fa fa-users'></i><span>Pacientes</span></a></li>
-            <!--li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-users'></i> <span>Pacientes</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
+                    <li><a href="{{ url('pacientes') }}" ><i class='fa fa-users'></i><span>Pacientes</span></a></li>
+                    <li><a href="{{ url('/agregar/paciente') }}" ><i class='fa fa-plus'></i><span>Agregar paciente</span></a></li>
                 </ul>
-            </li-->
+            </li>            
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

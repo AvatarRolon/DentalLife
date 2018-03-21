@@ -28,7 +28,7 @@ class CreatePacientesTable extends Migration
             $table->string('edad', 2);
             $table->date('fechaNac');
             $table->string('sexo', 1);
-            $table->string('numCasa', 4);
+            $table->string('numCasa', 4)->nullable()->default('S/N');
             $table->string('calle', 50);
             $table->string('colonia', 25);
             $table->string('ocupacion', 25);

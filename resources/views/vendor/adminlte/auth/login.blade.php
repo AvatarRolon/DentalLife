@@ -21,7 +21,7 @@
                 @if (count($errors) > 0)
                     <h4>
                         <span class="label label-danger">
-                           El campo usuario es requerido
+                        {{ $errors->first('user') }}
                         </span>
                     </h4>
                 @endif

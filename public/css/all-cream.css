@@ -2,6 +2,16 @@
  * Tema Cream para la personalización de DentalLife
 */
 
+label{
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.full-width{
+  width: 100%;
+}
+
+/* Box */
 .box.box-cream {
   border-top-color: #20B2AA;
 }
@@ -16,4 +26,169 @@
 .box.box-solid.box-cream > .box-header a,
 .box.box-solid.box-cream > .box-header .btn {
   color: #fff;
+}
+
+/* configuración de los iconos */
+.ico-cream{
+  font-size: 1.5em; 
+  cursor: pointer; 
+}
+
+
+/* colores de los iconos */
+.ico-b-cream{  
+  color: #00BFFF;
+}
+
+.ico-g-cream{ 
+  color: #20B2AA;
+}
+
+.ico-y-cream{ 
+  color: rgb(240, 207, 98);
+}
+
+.ico-w-cream{ 
+  color: #FFFFFF;
+}
+
+.ico-bl-cream{
+  color: #000000;
+}
+
+.ico-r-cream{
+  color: #DC143C;
+}
+
+/* Colores de los botones */
+.btn-b-cream{
+  color: #fff;
+  background-color: #00BFFF;
+  border-color: rgb(34, 200, 255);
+}
+.btn-b-cream:hover,
+.btn-b-cream:focus,
+.btn-b-cream.focus,
+.btn-b-cream:active,
+.btn-b-cream.active,
+.open > .dropdown-toggle.btn-b-cream{
+  color: #fff;
+  background-color: rgb(78, 211, 255);
+  border-color: rgb(34, 200, 255);
+}
+.btn-b-cream:active,
+.btn-b-cream.active,
+.open > .dropdown-toggle.btn-b-cream{
+  background-image: none;
+}
+.btn-b-cream.disabled,
+.btn-b-cream[disabled],
+fieldset[disabled] .btn-b-cream,
+.btn-b-cream.disabled:hover,
+.btn-b-cream[disabled]:hover,
+fieldset[disabled] .btn-b-cream:hover,
+.btn-b-cream.disabled:focus,
+.btn-b-cream[disabled]:focus,
+fieldset[disabled] .btn-b-cream:focus,
+.btn-b-cream.disabled.focus,
+.btn-b-cream[disabled].focus,
+fieldset[disabled] .btn-b-cream.focus,
+.btn-b-cream.disabled:active,
+.btn-b-cream[disabled]:active,
+fieldset[disabled] .btn-b-cream:active,
+.btn-b-cream.disabled.active,
+.btn-b-cream[disabled].active,
+fieldset[disabled] .btn-b-cream.active{
+  background-color: rgb(166, 233, 255);
+  border-color: rgb(141, 195, 212);
+}
+.btn-b-cream .badge{
+  color: #00BFFF;
+  background-color: #fff;
+}
+
+/* Tema para el label selected */
+.labels input[type=checkbox],
+.labels input[type=radio]{
+	display: none;
+}
+
+.labels label{
+  border-radius: 0.4em;
+	padding: 5px;
+  width: 100%;
+}
+
+.labels input[type=checkbox] + label,
+.labels input[type=radio] + label{
+	background: transparent;
+}
+
+.labels input[type=checkbox]:checked + label,
+.labels input[type=radio]:checked + label{
+	color: #FFFFFF;
+	background: #20B2AA;
+}
+
+/* preview de la foto */
+/* Div del thumbail */
+div.thumb-md-foto{
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 100%;
+  display: block;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+}
+
+div.thumb-md-foto > input[type=file]{
+  display: none;
+}
+
+div.thumb-md-foto > label{
+  color: #FFFFFF;
+  display: block;
+  font-size: 2em;
+  padding-top: 75px;
+  text-align: center;
+  width: 100%;
+}
+
+div.thumb-md-foto > label > sub{
+  color: #FFFFFF;
+  display: block;
+  font-size: 0.5em;
+  text-align: center;
+  width: 100%;
+}
+
+/* Foto */
+div.show-md-foto{
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 100%;
+  display: none;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  height: 200px;
+  width: 200px;
+}
+
+div.show-md-foto > img{
+  border-radius: 100%;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+div.show-md-foto > div.foto-paciente-buttons {
+  padding-top: 10px;
+  padding-left: 50px;
+  width: 100%;
+}
+
+div.show-md-foto > div.foto-paciente-buttons > label{
+  display: inline; 
+  margin-left: 5px; 
+  position: relative;
+  text-align: center;
 }
