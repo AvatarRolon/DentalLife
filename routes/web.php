@@ -9,16 +9,16 @@ Route::get('/', function () {
 
 /* Vistas */
 /* Ver todos los pacientes */
-Route::get('/pacientes','PacienteController@index');
+Route::name('verPacientes')->get('/pacientes','PacienteController@index');
 
 /* Ver paciente en especifico */
-Route::get('/ver/paciente/{id}','PacienteController@verPaciente');
+Route::name('verPaciente')->get('/ver/paciente/{id}','PacienteController@verPaciente');
 
 /* Vista agregar paciente */
-Route::get('/agregar/paciente','PacienteController@formNuevoPaciente');
+Route::name('agregarPaciente')->get('/agregar/paciente','PacienteController@formNuevoPaciente');
 
 /* Almacenamiento de datos */
-Route::post('/nuevo/paciente','PacienteController@create');
+Route::name('nuevoPaciente')->post('/nuevo/paciente','PacienteController@create');
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Middleware para autentificación y protecci+on de rutas */
 Route::group(['middleware' => 'auth'], function () {

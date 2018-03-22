@@ -9,7 +9,7 @@
                 <div class="col-md-2">
                     <label for="telefono">Tel&eacute;fono:</label> 
                 </div>
-                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="N&uacute;mero de tel&eacute;fono" autocomplete="off" />
+                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="N&uacute;mero de tel&eacute;fono" autocomplete="off" value="{{ old('telefono') }}" />
             </div>
             <br>
             <br>
@@ -17,7 +17,7 @@
                 <div class="col-md-2">
                     <label for="email">E-mail:</label>                                
                 </div>
-                <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@mail.com" autocomplete="off" max="50" />
+                <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@mail.com" autocomplete="off" max="50" value="{{ old('email') }}" />
             </div>           
         </div>
     </div>

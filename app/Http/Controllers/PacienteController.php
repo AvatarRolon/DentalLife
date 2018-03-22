@@ -5,6 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+//Modelo paciente
+use App\paciente;
+
+//Form Requests
+use App\Http\Requests\createPaciente;
+
+//Sweet Alert
+use Alert;
+
 class PacienteController extends Controller
 {        
     //Index de pacientes
@@ -13,20 +22,23 @@ class PacienteController extends Controller
     }
 
     //Metodo que almacena los datos de los pacientes
-    public function create(Request $request){
-        /*$this->validate($request,[
-            //Reglas de validación
-            'CURP' => 'required|max:18'            
-        ],[
-            //Mensajes de error
-            'CURP.required' => 'El campo CURP es requerido',
-            'CURP.max' => 'El campo CURP solo admite 18'
-        ]);
+    public function create(createPaciente $request){    
+        //Paso del request validado al modelo paciente para almacenar los datos en la BD
+        //Además de almacenar el resultado booleano para mandar un mensaje de erro o éxito
+        $booleanCreate = paciente::nuevoPaciente($request);
+        
+        if($booleanCreate){
+            //Mensaje de Sweet Alert de éxito
+            alert()->success('El paciente ha sido registado con éxito','Éxito'); 
+        }else{
+            //Mensaje de Sweet Alert de error
+            alert()->error('Ocurrio un error y los datos no fueron almacenados :(','Error inesperado');
+        }                        
 
-        //Redireccionar al formulario
-        return redirect()->route('/agregar/paciente');*/
-        return dd($request);
-        //return $request->file('otro')->store('public/img');
+        //Redireccionamiento a nuevo paciente
+        return redirect()
+        ->route('agregarPaciente')
+        ;
     }
 
     //Ver un paciente en especcífico
@@ -37,7 +49,7 @@ class PacienteController extends Controller
     }
 
     //Formulario para un nuevo paciente
-    public function formNuevoPaciente(){
+    public function formNuevoPaciente(){                            
         return view('pacientes.Layouts.agregarPaciente');
     }
 }

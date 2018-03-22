@@ -60,5 +60,8 @@ desired effect
     @include('adminlte::layouts.partials.scripts')
 @show
 
+<!-- Vista para Sweet Alert-->
+@include('sweet::alert')
+
 </body>
 </html>

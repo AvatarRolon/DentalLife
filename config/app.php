@@ -166,6 +166,9 @@ return [
         //Provider del lenguaje al español
         Laraveles\Spanish\SpanishServiceProvider::class,
 
+        //Provider para Sweet Alert
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+
     ],
 
     /*
@@ -217,6 +220,9 @@ return [
 
         //Admin LTE alias
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
+
+        //Alias para Sweet Alert
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
 
     ],
 

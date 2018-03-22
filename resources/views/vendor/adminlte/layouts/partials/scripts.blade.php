@@ -4,6 +4,9 @@
 <!-- Laravel App -->
 <script src="{{ asset('/js/app.js') }}" type="text/javascript"></script>
 
+<!-- Sweet Alert -->
+<script src="{{ asset('/js/sweetalert.min.js') }}" type="text/javascript"></script>
+
 <!-- Scripts de pacientes -->
 @include('pacientes.Layouts.partials.scripts')
 
