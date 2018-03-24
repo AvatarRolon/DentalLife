@@ -43,3 +43,51 @@
         $("#foto").attr('value',"{{ asset('/img/ico-man.png') }}")
     }
 </script>
+
+<!-- Script para eliminar un paciente (con Sweet Alert)-->
+<script type="text/javascript">
+    $('a#btnDeletePaciente').click(function(event) {
+        event.preventDefault();
+        var idpaciente = $(this).data('remote')
+        deletePaciente(idpaciente);
+    });
+
+    function deletePaciente(idpaciente){                
+        //Creación del formulario
+        var formularioPacientes = document.createElement('form');
+        formularioPacientes.action = "/eliminar/paciente/"+idpaciente;
+        formularioPacientes.method = 'post';
+
+        // Input token
+        var inputTokken = document.createElement('input');
+        inputTokken.type = 'hidden';
+        inputTokken.name = '_token';
+        inputTokken.value = $('meta[name="csrf-token"]').attr('content');
+        formularioPacientes.appendChild(inputTokken);
+        
+        
+
+        swal({
+            title: "¿Está seguro que desea eliminar al paciente?",
+            text: "Una vez eliminado, los datos no podrán ser recuperados",
+            icon: "warning",
+            buttons: {
+                cancel: "No, cancelar",
+                confirm : "Sí, Eliminar Paciente"
+            },
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                document.body.appendChild(formularioPacientes);
+                formularioPacientes.submit();
+            } else {
+                swal({
+                    title: "Operación cancelada",
+                    text: "Los datos del paciente se conservarán",
+                    icon: "info"
+                });
+            }
+        });
+    }
+</script>

@@ -39,9 +39,7 @@ class PacienteController extends Controller
         }                        
 
         //Redireccionamiento a nuevo paciente
-        return redirect()
-        ->route('agregarPaciente')
-        ;
+        return redirect()->route('agregarPaciente');
     }
 
     //Ver un paciente en especcífico
@@ -50,6 +48,19 @@ class PacienteController extends Controller
         return view('pacientes.Layouts.verPaciente')
         ->with('paciente',$paciente);
         ;
+    }
+
+    //Eliminar un paciente
+    public function delete($id){
+        $booleanDelete =  paciente::deletePaciente($id);
+
+        if($booleanDelete){
+            alert()->success('El paciente ha sido eliminado con éxito','Éxito');
+        }else{
+            alert()->error('No hemos podido eliminar al paciente :(','Error inesperado');
+        }
+        
+        return redirect()->route('verPacientes');
     }
 
     //Formulario para un nuevo paciente

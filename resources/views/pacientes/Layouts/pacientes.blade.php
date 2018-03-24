@@ -15,7 +15,7 @@
 @section('pacientes-content')
     <div class="row">
         <div class="col-md-12">
-            <a class="btn btn-b-cream" href="{{ url('/agregar/paciente') }}" role="button">
+            <a class="btn btn-info" href="{{ url('/agregar/paciente') }}" role="button">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 Agregar
             </a>
@@ -44,25 +44,31 @@
                             </tr>
                         </thead> 
                         <tbody>
-                            @foreach($pacientes as $paciente)
+                            @if($pacientes->count() > 0)
+                                @foreach($pacientes as $paciente)
+                                    <tr>
+                                        <td class="text-center">{{ $paciente -> id }}</td>
+                                        <td class="text-center">{{ $paciente -> nombre." ".$paciente -> apPat." ".$paciente -> apMat }}</td>
+                                        <td class="text-center">{{ $paciente -> telefono }}</td>
+                                        <td class="text-center">{{ $paciente -> ocupacion }}</td>
+                                        <td class="text-center">{{ $paciente -> edad }}</td>
+                                        <td class="text-center">{{ $paciente -> sexo }}</td>                            
+                                        <td class="text-center">
+                                            <a href="{{ url('/ver/paciente/'.$paciente -> id) }}"><i class="ico-cream ico-b-cream fa fa-eye" data-toggle="tooltip" title="Ver paciente"></i></a>
+                                            &nbsp;
+                                            <a><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar paciente"></i></a>
+                                            &nbsp;
+                                            <a><i class="ico-cream ico-b-cream fa fa-history" data-toggle="tooltip" title="Ver Historia Cl&iacute;nica"></i></a>
+                                            &nbsp;
+                                            <a id="btnDeletePaciente" data-remote="{{ $paciente -> id }}"><i class="ico-cream ico-r-cream fa fa-trash" data-toggle="tooltip" title="Borrar paciente"></i></a>
+                                        </td>
+                                    </tr>    
+                                @endforeach
+                            @else
                                 <tr>
-                                    <td class="text-center">{{ $paciente -> id }}</td>
-                                    <td class="text-center">{{ $paciente -> nombre." ".$paciente -> apPat." ".$paciente -> apMat }}</td>
-                                    <td class="text-center">{{ $paciente -> telefono }}</td>
-                                    <td class="text-center">{{ $paciente -> ocupacion }}</td>
-                                    <td class="text-center">{{ $paciente -> edad }}</td>
-                                    <td class="text-center">{{ $paciente -> sexo }}</td>                            
-                                    <td class="text-center">
-                                        <a href="{{ url('/ver/paciente/'.$paciente -> id) }}"><i class="ico-cream ico-b-cream fa fa-eye" data-toggle="tooltip" title="Ver datos"></i></a>
-                                        &nbsp;
-                                        <a><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar datos"></i></a>
-                                        &nbsp;
-                                        <a><i class="ico-cream ico-b-cream fa fa-history" data-toggle="tooltip" title="Historia cl&iacute;nica"></i></a>
-                                        &nbsp;
-                                        <a><i class="ico-cream ico-r-cream fa fa-trash" data-toggle="tooltip" title="Borrar paciente"></i></a>
-                                    </td>
-                                </tr>    
-                            @endforeach                        
+                                    <td colspan="7" class="text-center">Usted no tiene pacientes haga click en <a href="{{ url('/agregar/paciente') }}" class="label label-info">agregar</a> para añadir pacientes</td>
+                                </td>
+                            @endif                        
                         </tbody> 
                     </table>                        
                 </div>					

@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 //Clase DB
 use Illuminate\Support\Facades\DB;
 
+//Clase Storage
+use Illuminate\Support\Facades\Storage;
+
 
 class paciente extends Model
 {
@@ -31,6 +34,16 @@ class paciente extends Model
         'fechaIngreso',
         'foto'
     ];
+
+    public static function getPaciente($id){        
+        $paciente = paciente::findOrFail($id);
+        return $paciente;
+    }
+
+    public static function getpacientes(){
+        $pacientes = paciente::orderBy('id','asc')->paginate(10);
+        return $pacientes;
+    }
 
     public static function nuevoPaciente(Request $request){
         ///////////////////////////////////////////////////////////////
@@ -106,13 +119,24 @@ class paciente extends Model
         return $exito;
     }
 
-    public static function getPaciente($id){        
-        $paciente = paciente::findOrFail($id);
-        return $paciente;
+    public static function deletePaciente($id){
+        try{
+            DB::beginTransaction();
+            
+                $paciente = paciente::findOrFail($id);
+                if(Storage::exists('public'.$paciente['foto'])){
+                    Storage::delete('public'.$paciente['foto']);
+                }
+
+                $paciente->delete();
+            DB::commit();
+            $exito = true;
+        }catch(Exception $e){
+            DB::rollback();
+            $exito = false;
+        }        
+
+        return $exito;
     }
 
-    public static function getpacientes(){
-        $pacientes = paciente::orderBy('id','asc')->paginate(10);
-        return $pacientes;
-    }
 }

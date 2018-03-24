@@ -17,8 +17,12 @@ Route::name('verPaciente')->get('/ver/paciente/{id}','PacienteController@verPaci
 /* Vista agregar paciente */
 Route::name('agregarPaciente')->get('/agregar/paciente','PacienteController@formNuevoPaciente');
 
-/* Almacenamiento de datos */
+/* Proceso de datos */
+/* Agregar un nuevo paciente*/
 Route::name('nuevoPaciente')->post('/nuevo/paciente','PacienteController@create');
+
+/* Eliminar un paciente */
+Route::name('eliminarPaciente')->post('/eliminar/paciente/{id}','PacienteController@delete');
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Middleware para autentificación y protecci+on de rutas */
 Route::group(['middleware' => 'auth'], function () {
