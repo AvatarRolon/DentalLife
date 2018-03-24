@@ -85,9 +85,14 @@ class paciente extends Model
                 $paciente -> calle = $request -> get('calle');
                 $paciente -> colonia = $request -> get('colonia');
                 $paciente -> ocupacion = $request -> get('ocupacion');
-                $paciente -> fechaIngreso = $fechaActual; //Pendiente
-                $paciente -> foto =  $request->file('foto')->store('public/avatar/pacientes'); //Pendiente
+                $paciente -> fechaIngreso = $fechaActual; //Pendiente  
 
+                //Almacenar la foto
+                $fotoreturn = explode('/',$request->file('foto')->store('/public/avatar/pacientes'));
+                $foto = "/".$fotoreturn[1]."/".$fotoreturn[2]."/".$fotoreturn[3];               
+                $paciente -> foto =  $foto; //Pendiente
+
+                //Guardar al paciente
                 $paciente -> save();
 
             DB::commit();
@@ -99,5 +104,15 @@ class paciente extends Model
         }
 
         return $exito;
+    }
+
+    public static function getPaciente($id){        
+        $paciente = paciente::findOrFail($id);
+        return $paciente;
+    }
+
+    public static function getpacientes(){
+        $pacientes = paciente::orderBy('id','asc')->paginate(10);
+        return $pacientes;
     }
 }

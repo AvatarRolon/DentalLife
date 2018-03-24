@@ -17,8 +17,11 @@ use Alert;
 class PacienteController extends Controller
 {        
     //Index de pacientes
-    public function index(Request $request){
-        return view('pacientes.Layouts.pacientes');
+    public function index(Request $request){    
+        $pacientes = paciente::getpacientes();            
+        return view('pacientes.Layouts.pacientes')
+        ->with(['pacientes' => $pacientes])
+        ;
     }
 
     //Metodo que almacena los datos de los pacientes
@@ -43,8 +46,9 @@ class PacienteController extends Controller
 
     //Ver un paciente en especcífico
     public function verPaciente($id){
+        $paciente = paciente::getPaciente($id);
         return view('pacientes.Layouts.verPaciente')
-        ->with('id',$id);
+        ->with('paciente',$paciente);
         ;
     }
 

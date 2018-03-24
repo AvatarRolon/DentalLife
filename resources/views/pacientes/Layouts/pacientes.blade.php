@@ -44,27 +44,31 @@
                             </tr>
                         </thead> 
                         <tbody>
-                            <tr>
-                                <td class="text-center">1</td>
-                                <td class="text-center">Nombre del paciente</td>
-                                <td class="text-center">0123456789</td>
-                                <td class="text-center">Ocupación</td>
-                                <td class="text-center">100</td>
-                                <td class="text-center">M ó F</td>                            
-                                <td class="text-center">
-                                    <a href="{{ url('/ver/paciente/1') }}"><i class="ico-cream ico-b-cream fa fa-eye" data-toggle="tooltip" title="Ver datos"></i></a>
-                                    &nbsp;
-                                    <a><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar datos"></i></a>
-                                    &nbsp;
-                                    <a><i class="ico-cream ico-b-cream fa fa-history" data-toggle="tooltip" title="Historia cl&iacute;nica"></i></a>
-                                    &nbsp;
-                                    <a><i class="ico-cream ico-r-cream fa fa-trash" data-toggle="tooltip" title="Borrar paciente"></i></a>
-                                </td>
-                            </tr>                            
+                            @foreach($pacientes as $paciente)
+                                <tr>
+                                    <td class="text-center">{{ $paciente -> id }}</td>
+                                    <td class="text-center">{{ $paciente -> nombre." ".$paciente -> apPat." ".$paciente -> apMat }}</td>
+                                    <td class="text-center">{{ $paciente -> telefono }}</td>
+                                    <td class="text-center">{{ $paciente -> ocupacion }}</td>
+                                    <td class="text-center">{{ $paciente -> edad }}</td>
+                                    <td class="text-center">{{ $paciente -> sexo }}</td>                            
+                                    <td class="text-center">
+                                        <a href="{{ url('/ver/paciente/'.$paciente -> id) }}"><i class="ico-cream ico-b-cream fa fa-eye" data-toggle="tooltip" title="Ver datos"></i></a>
+                                        &nbsp;
+                                        <a><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar datos"></i></a>
+                                        &nbsp;
+                                        <a><i class="ico-cream ico-b-cream fa fa-history" data-toggle="tooltip" title="Historia cl&iacute;nica"></i></a>
+                                        &nbsp;
+                                        <a><i class="ico-cream ico-r-cream fa fa-trash" data-toggle="tooltip" title="Borrar paciente"></i></a>
+                                    </td>
+                                </tr>    
+                            @endforeach                        
                         </tbody> 
                     </table>                        
                 </div>					
             </div>   
         </div> 	
     </div>	
+    <!-- Opciones de paginación -->             
+    {{ $pacientes->render() }}
 @endsection
