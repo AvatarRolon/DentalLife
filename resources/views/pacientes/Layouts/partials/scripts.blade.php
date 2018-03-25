@@ -85,9 +85,39 @@
                 swal({
                     title: "Operación cancelada",
                     text: "Los datos del paciente se conservarán",
-                    icon: "info"
+                    icon: "info",
+                    timer: 1000
                 });
             }
         });
     }
+</script>
+
+<script type="text/javascript">
+    $("#btnEditarAceptar").click(function(event){
+        event.preventDefault();
+
+        swal({
+            title: "¿Está seguro que desea actualizar la información del paciente?",
+            text: "Una vez se actualicen los datos, no podremos restaurar las modificaciones",
+            icon: "warning",
+            buttons: {
+                cancel: "No, cancelar",
+                confirm : "Sí, Actualizar Paciente"
+            },
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                $("#editarPaciente").submit();
+            } else {
+                swal({
+                    title: "Operación cancelada",
+                    text: "Los datos del paciente se conservarán",
+                    icon: "info",
+                    timer: 1000
+                });
+            }
+        });
+    });
 </script>

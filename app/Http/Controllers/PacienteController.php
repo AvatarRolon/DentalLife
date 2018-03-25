@@ -50,6 +50,18 @@ class PacienteController extends Controller
         ;
     }
 
+    public function update(createPaciente $request){
+        $booleanUpdate = paciente::updatePaciente($request);
+
+        if($booleanUpdate){
+            alert()->success('La información del paciente se actualizó con éxito','Éxito');
+        }else{
+            alert()->error('No hemos podido actualizar al paciente :(','Error inesperado');
+        }
+
+        return redirect()->back();
+    }
+
     //Eliminar un paciente
     public function delete($id){
         $booleanDelete =  paciente::deletePaciente($id);
@@ -66,5 +78,13 @@ class PacienteController extends Controller
     //Formulario para un nuevo paciente
     public function formNuevoPaciente(){                            
         return view('pacientes.Layouts.agregarPaciente');
+    }
+
+    //Formulario para editar un nuevo paciente
+    public function formEditarPaciente($id){
+        $paciente = paciente::getPaciente($id);
+        return view('pacientes.Layouts.editarPaciente')
+        ->with('paciente',$paciente)
+        ;
     }
 }

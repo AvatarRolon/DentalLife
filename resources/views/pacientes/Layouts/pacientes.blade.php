@@ -56,7 +56,7 @@
                                         <td class="text-center">
                                             <a href="{{ url('/ver/paciente/'.$paciente -> id) }}"><i class="ico-cream ico-b-cream fa fa-eye" data-toggle="tooltip" title="Ver paciente"></i></a>
                                             &nbsp;
-                                            <a><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar paciente"></i></a>
+                                            <a href="{{ url('/editar/paciente/'.$paciente -> id) }}"><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar paciente"></i></a>
                                             &nbsp;
                                             <a><i class="ico-cream ico-b-cream fa fa-history" data-toggle="tooltip" title="Ver Historia Cl&iacute;nica"></i></a>
                                             &nbsp;

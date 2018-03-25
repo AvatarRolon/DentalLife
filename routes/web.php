@@ -17,9 +17,15 @@ Route::name('verPaciente')->get('/ver/paciente/{id}','PacienteController@verPaci
 /* Vista agregar paciente */
 Route::name('agregarPaciente')->get('/agregar/paciente','PacienteController@formNuevoPaciente');
 
+/* Vista para editar paciente */
+Route::name('editarPaciente')->get('/editar/paciente/{id}','PacienteController@formEditarPaciente');
+
 /* Proceso de datos */
-/* Agregar un nuevo paciente*/
+/* Agregar un nuevo paciente */
 Route::name('nuevoPaciente')->post('/nuevo/paciente','PacienteController@create');
+
+/* Editar un paciente */
+Route::name('updatePaciente')->post('/update/paciente','PacienteController@update');
 
 /* Eliminar un paciente */
 Route::name('eliminarPaciente')->post('/eliminar/paciente/{id}','PacienteController@delete');

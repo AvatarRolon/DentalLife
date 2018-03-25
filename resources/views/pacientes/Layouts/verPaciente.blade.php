@@ -12,7 +12,7 @@
 @endsection
 
 @section('contentheader_description')
-	{{ 'Ver información de un paciente' }}
+	{{ 'Vea información de un paciente' }}
 @endsection
 
 @section('pacientes-content')
