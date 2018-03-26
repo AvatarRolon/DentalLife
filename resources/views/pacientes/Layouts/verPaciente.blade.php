@@ -16,6 +16,10 @@
 @endsection
 
 @section('pacientes-content')
+    <div class="row">
+        <a href="{{ url('/editar/paciente/'.$paciente -> id) }}" class="btn btn-info"><i class="fa fa-edit"></i> Editar paciente</a>
+        <a id="btnDeletePaciente" data-remote="{{ $paciente -> id }}" class="btn btn-danger"><i class="fa fa-trash"></i> Eliminar paciente</a>
+    </div>
     <br>
     <div class="row">
         <div class="col">

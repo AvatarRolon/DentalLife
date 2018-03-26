@@ -63,9 +63,7 @@
         inputTokken.type = 'hidden';
         inputTokken.name = '_token';
         inputTokken.value = $('meta[name="csrf-token"]').attr('content');
-        formularioPacientes.appendChild(inputTokken);
-        
-        
+        formularioPacientes.appendChild(inputTokken);                
 
         swal({
             title: "¿Está seguro que desea eliminar al paciente?",
@@ -93,6 +91,37 @@
     }
 </script>
 
+<!-- Script para agregar un paciente (con Sweet Alert)-->
+<script type="text/javascript">
+    $("#agregarPaciente").click(function(event){
+        event.preventDefault();
+
+        swal({
+            title: "¿Está seguro que desea agregar un nuevo paciente?",
+            text: "Se añadira un nuevo paciente",
+            icon: "warning",
+            buttons: {
+                cancel: "No, cancelar",
+                confirm : "Sí, Agregar Paciente"
+            },
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                $("#nuevoPaciente").submit();
+            } else {
+                swal({
+                    title: "Operación cancelada",
+                    text: "Revise la información antes de agregar al paciente",
+                    icon: "info",
+                    timer: 1000
+                });
+            }
+        });
+    });
+</script>
+
+<!-- Script para actualizar un paciente (con Sweet Alert)-->
 <script type="text/javascript">
     $("#btnEditarAceptar").click(function(event){
         event.preventDefault();

@@ -16,7 +16,11 @@
 @endsection
 
 @section('pacientes-content')
-    <br>
+    @if (count($errors) > 0)
+        <div class="row alert alert-danger text-center">
+            <span>Por favor, complete los campos que son necesarios</span>
+        </div>    
+    @endif
     <div class="row">
         <div class="col">
             <form action="{{ url('/nuevo/paciente') }}" method="POST" id="nuevoPaciente" class="form-inline" enctype="multipart/form-data">
@@ -35,8 +39,8 @@
 
                 <!-- Botones de envío -->
                 <div class="form-group">
-                    <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-ok"></i> Agregar paciente</button>
-                    <a href="{{ url('/pacientes') }}" class="btn btn-danger" ><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+                    <button class="btn btn-primary" id="agregarPaciente" type="submit"><i class="glyphicon glyphicon-ok"></i> Agregar paciente</button>
+                    <a href="{{ url('/pacientes') }}" class="btn btn-default" ><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
                 </div>
             </form>
         </div>

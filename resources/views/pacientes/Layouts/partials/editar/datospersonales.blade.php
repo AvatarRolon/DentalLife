@@ -6,6 +6,15 @@
     <div class="box-body">	
         <div class="container-fluid spark-screen">                        
             <div class="form-group full-width">
+                @if (count($errors) > 0)
+                    <div class="row">
+                    <div class="col-md-2"></div>
+                        <div class="col-md-2">
+                            <span class="label label-danger text-center" >{{$errors->first('CURP')}}</span>
+                        </div> 
+                    </div>    
+                    <br>
+                @endif
                 <div class="col-md-2">
                     <label for="CURP">CURP:<span class="ico-r-cream">*<span></label> 
                 </div>
@@ -13,7 +22,19 @@
                 <input type="hidden" class="form-control" id="CURP" name="hdCURP" placeholder="hdCURP" autocomplete="off" max="18" value="{{ $paciente -> CURP }}" required  />
             </div>
             <br><br>
-            <div class="form-group full-width">                       
+            <div class="form-group full-width">
+                @if (count($errors) > 0)
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-2">
+                            <span class="label label-danger" >{{$errors->first('nombre')}}</span>
+                        </div>                         
+                        <div class="col-md-3 text-center">     
+                            <span class="label label-danger" >{{$errors->first('appat')}}</span>
+                        </div> 
+                    </div>    
+                    <br>
+                @endif                        
                 <div class="col-md-2">
                     <label for="nombre">Nombre:<span class="ico-r-cream">*<span></label>                                
                 </div>
@@ -32,6 +53,15 @@
             </div>
             <br><br>
             <div class="form-group full-width">
+                @if (count($errors) > 0)
+                    <div class="row">
+                    <div class="col-md-2"></div>
+                        <div class="col-md-2">
+                            <span class="label label-danger text-center" >{{$errors->first('ocupacion')}}</span>
+                        </div> 
+                    </div>    
+                    <br>
+                @endif
                 <div class="col-md-2">
                     <label for="ocupacion">Ocupaci&oacute;n:<span class="ico-r-cream">*<span></label>
                 </div>
@@ -39,6 +69,15 @@
             </div>
             <br><br>
             <div class="form-group full-width">
+                @if (count($errors) > 0)
+                    <div class="row">
+                    <div class="col-md-2"></div>
+                        <div class="col-md-2">
+                            <span class="label label-danger text-center" >{{$errors->first('fechaNac')}}</span>
+                        </div> 
+                    </div>    
+                    <br>
+                @endif
                 <div class="col-md-2">
                     <label for="fechaNac">Fecha de nacimiento:<span class="ico-r-cream">*<span></label>
                 </div>
@@ -46,6 +85,15 @@
             </div>
             <br><br>
             <div class="form-group full-width">
+                @if (count($errors) > 0)
+                    <div class="row">
+                    <div class="col-md-2"></div>
+                        <div class="col-md-2">
+                            <span class="label label-danger text-center" >{{$errors->first('sexo')}}</span>
+                        </div> 
+                    </div>    
+                    <br>
+                @endif
                 <div class="col-md-2">
                     <label for="">Sexo:<span class="ico-r-cream">*<span><br></label>
                 </div>
