@@ -14,14 +14,30 @@ use App\Http\Requests\createPaciente;
 //Sweet Alert
 use Alert;
 
+//Datatables
+use Yajra\Datatables\Datatables;
+
 class PacienteController extends Controller
 {        
     //Index de pacientes
-    public function index(Request $request){    
-        $pacientes = paciente::getpacientes();            
-        return view('pacientes.Layouts.pacientes')
-        ->with(['pacientes' => $pacientes])
-        ;
+    public function index(Request $request){       
+        if($request->ajax()){
+            $pacientes = paciente::select(['id','nombre','telefono','ocupacion','edad','sexo']);
+ 
+            return DataTables::of($pacientes)
+            ->addColumn('action',function ($pacientes){
+                return '<a href="/ver/paciente/'.$pacientes -> id.'"><i class="ico-cream ico-b-cream fa fa-eye" data-toggle="tooltip" title="Ver paciente"></i></a>
+                        &nbsp;
+                        <a href="/editar/paciente/'.$pacientes -> id.'"><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar paciente"></i></a>
+                        &nbsp;
+                        <a><i class="ico-cream ico-b-cream fa fa-history" data-toggle="tooltip" title="Ver Historia Cl&iacute;nica"></i></a>
+                        &nbsp;
+                        <a id="btnDeletePaciente" onclick="deletePaciente('.$pacientes -> id.')" data-remote="'.$pacientes -> id.'"><i class="ico-cream ico-r-cream fa fa-trash" data-toggle="tooltip" title="Borrar paciente"></i></a>';
+            })
+            ->make(true)
+            ;
+        }       
+        return view('pacientes.Layouts.pacientes');
     }
 
     //Metodo que almacena los datos de los pacientes

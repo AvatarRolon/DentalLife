@@ -1,3 +1,37 @@
+<!-- Script para crear la tabla de los pacietes con (Datatables) -->
+<script>
+    $(document).ready(function(){
+        $('#TablaPacientes').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: "{{ route('verPacientes') }}",
+            columns: [
+                {data: 'id', name: 'id', className: "text-center"},
+                {data: 'nombre', name: 'nombre', className: "text-center"},
+                {data: 'telefono', name: 'telefono', className: "text-center"},
+                {data: 'ocupacion', name: 'ocupacion', className: "text-center"},
+                {data: 'edad', name: 'edad', className: "text-center"},
+                {data: 'sexo', name: 'sexo', className: "text-center"},
+                { data: 'action', name: 'sexo', className: "text-center"}
+            ],
+            language: {
+                processing:     "Procesando",
+                search:         "Buscar:",
+                info:           "Mostrando _START_ de _END_ , _TOTAL_ elementos totales",
+                infoEmpty:      "No existen pacientes",
+                emptyTable:     "No existen pacientes",
+                paginate: {
+                    first:      "Primero",
+                    previous:   "Anterior",
+                    next:       "Siguiente",
+                    last:       "&Uacute;ltimo"
+                },
+                lengthMenu: "Mostrar _MENU_ entradas"
+            }
+        });
+    });
+</script>
+
 <!-- Script para el cambio y agregado de una foto -->
 <script type="text/javascript">
     $("#foto").change(setFotoPaciente);

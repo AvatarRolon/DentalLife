@@ -169,6 +169,9 @@ return [
         //Provider para Sweet Alert
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
+        //Provider para Datatables
+        Yajra\DataTables\DataTablesServiceProvider::class,
+
     ],
 
     /*
@@ -223,6 +226,9 @@ return [
 
         //Alias para Sweet Alert
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+
+        //Alias para datatables
+        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
     ],
 
