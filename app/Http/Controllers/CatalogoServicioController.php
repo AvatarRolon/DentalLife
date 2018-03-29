@@ -24,13 +24,18 @@ class CatalogoServicioController extends Controller
                 "serv" =>servicio::where('categoriaServ_id', '=', $categorias[$i]->id)->get(['id','nombre','costo']),
             ];
         }
-     //return $catalogo[0]['categorias']['serv'][0];
-      //  return count($catalogo[0]['serv']);
-       
+
+        if(isset($catalogo)){
+            return view('catalogoServicio.index')
+            ->with('categorias', $categorias)
+            ->with('servicios', $servicios)
+            ->with('catalogo', $catalogo)
+            ;
+        }
+
         return view('catalogoServicio.index')
         ->with('categorias', $categorias)
         ->with('servicios', $servicios)
-        ->with('catalogo', $catalogo)
         ;
         
     }
