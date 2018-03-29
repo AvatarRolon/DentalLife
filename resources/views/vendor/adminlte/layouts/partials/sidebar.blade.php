@@ -40,7 +40,15 @@
                     <li><a href="{{ url('pacientes') }}" ><i class='fa fa-users'></i><span>Pacientes</span></a></li>
                     <li><a href="{{ url('/agregar/paciente') }}" ><i class='fa fa-plus'></i><span>Agregar paciente</span></a></li>
                 </ul>
-            </li>            
+            </li>
+            <!--....................................................................................--> 
+            <li class="treeview">
+                <a href="#"><i class='fa fa-users'></i> <span>Catálogo de servicios</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('catalogoServicio') }}" ><i class='fa fa-users'></i><span>Catálogo de servicios</span></a></li>
+                    <li><a href="{{ url('catalogoServicio/create') }}" ><i class='fa fa-plus'></i><span>Agregar seervicio</span></a></li>
+                </ul>
+            </li>         
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

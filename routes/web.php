@@ -29,6 +29,9 @@ Route::name('updatePaciente')->post('/update/paciente','PacienteController@updat
 
 /* Eliminar un paciente */
 Route::name('eliminarPaciente')->post('/eliminar/paciente/{id}','PacienteController@delete');
+
+/* Catalógo de servicios*/
+Route::resource('catalogoServicio', 'CatalogoServicioController');
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Middleware para autentificación y protecci+on de rutas */
 Route::group(['middleware' => 'auth'], function () {

@@ -10,6 +10,9 @@
 <!-- Scripts de pacientes -->
 @include('pacientes.Layouts.partials.scripts')
 
+<!-- Scripts de catálogo de servicio -->
+@include('catalogoServicio.partials.script')
+
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 

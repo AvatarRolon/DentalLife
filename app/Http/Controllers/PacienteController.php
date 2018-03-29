@@ -80,7 +80,7 @@ class PacienteController extends Controller
 
     //Eliminar un paciente
     public function delete($id){
-        $booleanDelete =  paciente::deletePaciente($id);
+        $booleanDelete =  servicio::deletePaciente($id);
 
         if($booleanDelete){
             alert()->success('El paciente ha sido eliminado con éxito','Éxito');
