@@ -1,4 +1,4 @@
-@extends('pacientes.index')
+@extends('adminlte::page')
 
 @section('htmlheader_title')
 	{{ 'DentalLife-Ver paciente' }}
@@ -15,22 +15,24 @@
 	{{ 'Vea información de un paciente' }}
 @endsection
 
-@section('pacientes-content')
+@section('main-content')
+<div class="container-fluid spark-screen">
     <div class="row">
-        <a href="{{ url('/editar/paciente/'.$paciente -> id) }}" class="btn btn-info"><i class="fa fa-edit"></i> Editar paciente</a>
+        <a href="{{ url('pacientes/'.$paciente -> id.'/edit') }}" class="btn btn-info"><i class="fa fa-edit"></i> Editar paciente</a>
         <a id="btnDeletePaciente" data-remote="{{ $paciente -> id }}" class="btn btn-danger"><i class="fa fa-trash"></i> Eliminar paciente</a>
     </div>
     <br>
     <div class="row">
         <div class="col">
             <!-- Ver los datos personales -->
-            @include('pacientes.Layouts.partials.verPaciente.datosPersonales');
+            @include('pacientes.partials.show.datosPersonales');
 
             <!-- Ver la información de contacto-->
-            @include('pacientes.Layouts.partials.verPaciente.contactoinfo')
+            @include('pacientes.partials.show.contactoinfo')
 
             <!-- Ver la dirección-->
-            @include('pacientes.Layouts.partials.verPaciente.direccion')
+            @include('pacientes.partials.show.direccion')
         </div>
     </div>
+</div>
 @endsection

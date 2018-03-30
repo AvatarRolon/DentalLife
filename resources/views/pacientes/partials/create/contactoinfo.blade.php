@@ -9,7 +9,7 @@
                 <div class="col-md-2">
                     <label for="telefono">Tel&eacute;fono:</label> 
                 </div>
-                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="N&uacute;mero de tel&eacute;fono" autocomplete="off" value="{{ old('telefono') }}" />
+                <input type="number" class="form-control" id="telefono" name="telefono" placeholder="N&uacute;mero de tel&eacute;fono" autocomplete="off" value="{{ old('telefono', isset($paciente) ? $paciente->telefono : '') }}" />
             </div>
             <br>
             <br>
@@ -17,7 +17,7 @@
                 <div class="col-md-2">
                     <label for="email">E-mail:</label>                                
                 </div>
-                <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@mail.com" autocomplete="off" max="50" value="{{ old('email') }}" />
+                <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@mail.com" autocomplete="off" max="50" value="{{ old('email', isset($paciente) ? $paciente->email : '') }}" />
             </div>           
         </div>
     </div>

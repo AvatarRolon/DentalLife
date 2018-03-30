@@ -8,7 +8,7 @@
 <script src="{{ asset('/js/sweetalert.min.js') }}" type="text/javascript"></script>
 
 <!-- Scripts de pacientes -->
-@include('pacientes.Layouts.partials.scripts')
+@include('pacientes.partials.script')
 
 <!-- Scripts de catálogo de servicio -->
 @include('catalogoServicio.partials.script')

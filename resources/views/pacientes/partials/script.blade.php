@@ -4,7 +4,7 @@
         $('#TablaPacientes').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('verPacientes') }}",
+            ajax: "{{ url('pacientes') }}",
             columns: [
                 {data: 'id', name: 'id', className: "text-center"},
                 {data: 'nombre', name: 'nombre', className: "text-center"},
@@ -89,8 +89,15 @@
     function deletePaciente(idpaciente){                
         //Creación del formulario
         var formularioPacientes = document.createElement('form');
-        formularioPacientes.action = "/eliminar/paciente/"+idpaciente;
+        formularioPacientes.action = "/pacientes/"+idpaciente;
         formularioPacientes.method = 'post';
+
+        //Input method
+        var inputMethod = document.createElement('input');
+        inputMethod.type = 'hidden';
+        inputMethod.name = '_method';
+        inputMethod.value = 'DELETE';
+        formularioPacientes.appendChild(inputMethod);    
 
         // Input token
         var inputTokken = document.createElement('input');

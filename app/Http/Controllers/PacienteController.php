@@ -26,9 +26,9 @@ class PacienteController extends Controller
  
             return DataTables::of($pacientes)
             ->addColumn('action',function ($pacientes){
-                return '<a href="/ver/paciente/'.$pacientes -> id.'"><i class="ico-cream ico-b-cream fa fa-eye" data-toggle="tooltip" title="Ver paciente"></i></a>
+                return '<a href="/pacientes/'.$pacientes -> id.'"><i class="ico-cream ico-b-cream fa fa-eye" data-toggle="tooltip" title="Ver paciente"></i></a>
                         &nbsp;
-                        <a href="/editar/paciente/'.$pacientes -> id.'"><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar paciente"></i></a>
+                        <a href="/pacientes/'.$pacientes -> id.'/edit"><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar paciente"></i></a>
                         &nbsp;
                         <a><i class="ico-cream ico-b-cream fa fa-history" data-toggle="tooltip" title="Ver Historia Cl&iacute;nica"></i></a>
                         &nbsp;
@@ -37,11 +37,11 @@ class PacienteController extends Controller
             ->make(true)
             ;
         }       
-        return view('pacientes.Layouts.pacientes');
+        return view('pacientes.index');
     }
 
     //Metodo que almacena los datos de los pacientes
-    public function create(createPaciente $request){    
+    public function store(createPaciente $request){    
         //Paso del request validado al modelo paciente para almacenar los datos en la BD
         //Además de almacenar el resultado booleano para mandar un mensaje de erro o éxito
         $booleanCreate = paciente::nuevoPaciente($request);
@@ -55,18 +55,11 @@ class PacienteController extends Controller
         }                        
 
         //Redireccionamiento a nuevo paciente
-        return redirect()->route('agregarPaciente');
+        return redirect('pacientes');
     }
 
-    //Ver un paciente en especcífico
-    public function verPaciente($id){
-        $paciente = paciente::getPaciente($id);
-        return view('pacientes.Layouts.verPaciente')
-        ->with('paciente',$paciente);
-        ;
-    }
-
-    public function update(createPaciente $request){
+    //Actualizar información de un paciente
+    public function actualizar(createPaciente $request){
         $booleanUpdate = paciente::updatePaciente($request);
 
         if($booleanUpdate){
@@ -75,12 +68,20 @@ class PacienteController extends Controller
             alert()->error('No hemos podido actualizar al paciente :(','Error inesperado');
         }
 
-        return redirect()->back();
+        return redirect('/pacientes');
+    }
+
+    //Ver un paciente en especcífico
+    public function show($id){
+        $paciente = paciente::getPaciente($id);
+        return view('pacientes.partials.show')
+        ->with('paciente',$paciente);
+        ;
     }
 
     //Eliminar un paciente
-    public function delete($id){
-        $booleanDelete =  servicio::deletePaciente($id);
+    public function destroy($id){
+        $booleanDelete =  paciente::deletePaciente($id);
 
         if($booleanDelete){
             alert()->success('El paciente ha sido eliminado con éxito','Éxito');
@@ -88,18 +89,18 @@ class PacienteController extends Controller
             alert()->error('No hemos podido eliminar al paciente :(','Error inesperado');
         }
         
-        return redirect()->route('verPacientes');
+        return redirect('pacientes');
     }
 
     //Formulario para un nuevo paciente
-    public function formNuevoPaciente(){                            
-        return view('pacientes.Layouts.agregarPaciente');
+    public function create(){                            
+        return view('pacientes.partials.create');
     }
 
     //Formulario para editar un nuevo paciente
-    public function formEditarPaciente($id){
+    public function edit($id){
         $paciente = paciente::getPaciente($id);
-        return view('pacientes.Layouts.editarPaciente')
+        return view('pacientes.partials.edit')
         ->with('paciente',$paciente)
         ;
     }

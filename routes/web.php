@@ -6,29 +6,8 @@ Route::get('/', function () {
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Pacientes */
-
-/* Vistas */
-/* Ver todos los pacientes */
-Route::name('verPacientes')->get('/pacientes','PacienteController@index');
-
-/* Ver paciente en especifico */
-Route::name('verPaciente')->get('/ver/paciente/{id}','PacienteController@verPaciente');
-
-/* Vista agregar paciente */
-Route::name('agregarPaciente')->get('/agregar/paciente','PacienteController@formNuevoPaciente');
-
-/* Vista para editar paciente */
-Route::name('editarPaciente')->get('/editar/paciente/{id}','PacienteController@formEditarPaciente');
-
-/* Proceso de datos */
-/* Agregar un nuevo paciente */
-Route::name('nuevoPaciente')->post('/nuevo/paciente','PacienteController@create');
-
-/* Editar un paciente */
-Route::name('updatePaciente')->post('/update/paciente','PacienteController@update');
-
-/* Eliminar un paciente */
-Route::name('eliminarPaciente')->post('/eliminar/paciente/{id}','PacienteController@delete');
+Route::post('pacientes/update','PacienteController@actualizar');
+Route::resource('pacientes','PacienteController');
 
 /* Catalógo de servicios*/
 Route::resource('catalogoServicio', 'CatalogoServicioController');

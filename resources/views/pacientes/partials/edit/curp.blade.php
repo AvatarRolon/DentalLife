@@ -1,0 +1,1 @@
+<input type="hidden" class="form-control" id="hdCURP" name="hdCURP" autocomplete="off" max="18" value="{{ $paciente->CURP }}" required  />
