@@ -13,8 +13,16 @@
 <!-- Scripts de catálogo de servicio -->
 @include('catalogoServicio.partials.script')
 
+<!-- Scripts de catálogo de servicio -->
+@include('citas.partials.script')
+
+<!--Select2-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+
+
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+
 
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

@@ -1,23 +1,23 @@
 @extends('adminlte::page')
 
 @section('htmlheader_title')
-	{{ 'DentalLife-Catálogo de servicios' }}
+	{{ 'DentalLife-Citas' }}
 @endsection
 
 @section('contentheader_title')
-	{{ 'Catálogo de servicios' }}
+	{{ 'Citas' }}
 @endsection
 
 @section('contentheader_description')
-	{{ 'Información de sus servicios' }}
+	{{ 'Información de sus citas' }}
 @endsection
 
 @section('main-content')
    <div class="row">
         <div class="col-md-12">
-            <a class="btn btn-info" href="{{ url('catalogoServicio/create') }}" role="button" style="background-color: #47B7B1;">
+            <a class="btn btn-info" href="{{ url('citas/create') }}" role="button" style="background-color: #47B7B1;">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                Agregar
+                Agendar
             </a>
             <!--button type="button" class="btn btn-primary" data-toggle="modal" id="imprimir"><i class="glyphicon glyphicon-print"></i> Imprimir</button-->
         </div>
@@ -29,10 +29,10 @@
 				<div class="box box-solid box-cream">
 				    <div class="box-header with-border">	
 				    	<i class="glyphicon glyphicon-list"></i>			          
-				        <h3 class="box-title">Listado de los servicios</h3>
+				        <h3 class="box-title">Próximas citas</h3>
 				    </div>			    
 				    <div class="box-body">					
-						@include('catalogoServicio.partials.tabla')
+						
 					</div>					
 				</div>   
 			</div> 	

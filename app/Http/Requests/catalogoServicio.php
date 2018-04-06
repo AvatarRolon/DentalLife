@@ -15,7 +15,6 @@ class catalogoServicio extends FormRequest
     {
         return true;
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -24,25 +23,24 @@ class catalogoServicio extends FormRequest
     public function rules()
     {
         return [
-            //
-            'nombre' => 'required|string|max:30',
+            'nombre' => 'required|string|max:255',  
             'costo' => 'required',
             'categoriaServ_id' => 'required'
         ];
     }
-
-     public function messages()
+    //.......................................................
+    public function messages()
     {
         return [
-            //Mensajes de error para el campo nombre 
+            //Mensajes de error para el campo nombre
             'nombre.required' => 'El campo nombre es requerido',
-            'nombre.max' => 'El campo nombre debe tener máximo 30 carácteres',
+            'nombre.max' => 'El campo nombre debe tener máximo 255 carácteres',
 
-            //Mensajes de error para el campo costo
+            //Mensajes de error para el campo costo 
             'costo.required' => 'El campo costo es requerido',
 
             //Mensajes de error para el campo categoriaServ_id
-            'categoriaServ_id.required' => 'Necesita seleccionar una opción',
+            'categoriaServ_id.required' => 'El campo categoria del servicio es requerido'
         ];
     }
 }

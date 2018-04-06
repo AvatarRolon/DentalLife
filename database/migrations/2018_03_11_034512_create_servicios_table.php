@@ -18,8 +18,8 @@ class CreateServiciosTable extends Migration
             $table->increments('id');
 
             //Campos de la tabla servicios
-            $table->string('nombre', 30);
-            $table->float('costo');
+            $table->string('nombre', 255);
+            $table->decimal('costo', 15, 2);
            
             //Llaves foraneas
             $table->integer('categoriaServ_id')->unsigned();

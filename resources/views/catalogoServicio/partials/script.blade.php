@@ -1,6 +1,18 @@
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('#TablaServicios').dataTable();  
+    $(document).ready(function () {
+        //Filtrar la busqueda de los servicios
+       $('#entradafilter').keyup(function () {
+          var rex = new RegExp($(this).val(), 'i');
+            $('.contenidobusqueda tr').hide();
+            $('.contenidobusqueda tr').filter(function () {
+                return rex.test($(this).text());
+            }).show();
+        });
+       
+       $('#categoria').click(function(e) {
+            e.preventDefault();
+            $('#nuevaCategoria').modal('show');
+        }); 
     });
 
     //delete

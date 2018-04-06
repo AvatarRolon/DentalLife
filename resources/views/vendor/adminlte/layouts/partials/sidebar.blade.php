@@ -38,17 +38,33 @@
                 <a href="#"><i class='fa fa-users'></i> <span>Pacientes</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('pacientes') }}" ><i class='fa fa-users'></i><span>Pacientes</span></a></li>
-                    <li><a href="{{ url('/agregar/paciente') }}" ><i class='fa fa-plus'></i><span>Agregar paciente</span></a></li>
+                    <li><a href="{{ url('pacientes/create') }}" ><i class='fa fa-plus'></i><span>Agregar paciente</span></a></li>
                 </ul>
             </li>
             <!--....................................................................................--> 
             <li class="treeview">
-                <a href="#"><i class='fa fa-users'></i> <span>Catálogo de servicios</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-book'></i> <span>Catálogo de servicios</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('catalogoServicio') }}" ><i class='fa fa-users'></i><span>Catálogo de servicios</span></a></li>
-                    <li><a href="{{ url('catalogoServicio/create') }}" ><i class='fa fa-plus'></i><span>Agregar seervicio</span></a></li>
+                    <li><a href="{{ url('catalogoServicio') }}" ><i class='fa fa-book'></i><span>Catálogo de servicios</span></a></li>
+                    <li><a href="{{ url('catalogoServicio/create') }}" ><i class='fa fa-plus'></i><span>Agregar servicio</span></a></li>
                 </ul>
-            </li>         
+            </li>
+            <!--....................................................................................--> 
+            <li class="treeview">
+                <a href="#"><i class='fa fa-credit-card-alt'></i> <span>Abono</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="" ><i class='fa fa-money'></i><span>Abono</span></a></li>
+                    <li><a href="" ><i class='fa fa-plus'></i><span>Agregar abono</span></a></li>
+                </ul>
+            </li> 
+            <!--....................................................................................--> 
+            <li class="treeview">
+                <a href="#"><i class='fa fa-calendar-o'></i> <span>Citas</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('citas') }}" ><i class='fa fa-calendar-o'></i><span>Citas</span></a></li>
+                    <li><a href="{{ url('citas/create') }}" ><i class='fa fa-plus'></i><span>Agendar cita</span></a></li>
+                </ul>
+            </li>          
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

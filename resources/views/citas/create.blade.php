@@ -1,18 +1,18 @@
 @extends('adminlte::page')
 
 @section('htmlheader_title')
-	{{ 'DentalLife-Agregar servicio' }}
+	{{ 'DentalLife-Agendar cita' }}
 @endsection
 
 @section('contentheader_title')
     &nbsp;&nbsp;
-    <a href="{{ url('/catalogoServicio') }}" data-toggle="tooltip" title="Regresar al catalógo de servicios"><i class="ico-green-cream fa fa-angle-left"></i></a>
+    <a href="{{ url('/citas') }}" data-toggle="tooltip" title="Regresar a la agenda de citas"><i class="ico-green-cream fa fa-angle-left"></i></a>
     &nbsp;&nbsp;
-    {{ 'Agregar servicio' }}
+    {{ 'Agendar cita' }}
 @endsection
 
 @section('contentheader_description')
-	{{ 'Agregue un nuevo servicio' }}
+	{{ 'Agendar una nueva cita' }}
 @endsection
 
 @section('main-content')
@@ -29,29 +29,27 @@
 				<div class="box box-solid box-cream">
 					<div class="box-header with-border">	
 				        <i class="glyphicon glyphicon-pencil"></i>			          
-				        <h3 class="box-title">Registrar un nuevo servicio</h3>
+				        <h3 class="box-title">Agendar nueva cita</h3>
 				        <div class="box-tools pull-right">
 			                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
 			                </button>
               			</div> 
 				    </div>	
-				   <!-- form -->
-            		<form method="POST" action="/catalogoServicio/" >
+				    <!-- form -->
+            		<form method="POST" action="/citas/" >
 					    <div class="box-body">	
-							@include('catalogoServicio.partials.campos')
+							@include('citas.partials.campos')
 						</div>
 						<div >
 							<div class="col-md-12 text-right">
 								</br>
 								<button type="submit" class="btn btn-primary " id="id_create"><i class="glyphicon glyphicon-save"></i> Guardar </button>
-					            <a class="btn btn-danger" href="{{ url('/catalogoServicio') }}" role="button">
+					            <a class="btn btn-danger" href="{{ url('/citas') }}" role="button">
 					                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Salir
 					            </a>	 								
 							</div>							
 						</div>
 					</form>
-					<!--Modal de nueva Categoria-->
-					@include('catalogoServicio.partials.nuevaCategoria')
 				</div>				
 			</div>
 		</div>

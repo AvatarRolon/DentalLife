@@ -11,6 +11,10 @@ Route::resource('pacientes','PacienteController');
 
 /* Catalógo de servicios*/
 Route::resource('catalogoServicio', 'CatalogoServicioController');
+/*Categoria de los servicios*/
+Route::resource('categoriaServicio', 'CategoriaServicioController');
+/*Citas*/
+Route::resource('citas','CitaController');
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Middleware para autentificación y protecci+on de rutas */
 Route::group(['middleware' => 'auth'], function () {

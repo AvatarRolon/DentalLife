@@ -1,18 +1,18 @@
 @extends('adminlte::page')
 
 @section('htmlheader_title')
-	{{ 'DentalLife-Editar servicio' }}
+	{{ 'DentalLife-Ver servicio' }}
 @endsection
 
 @section('contentheader_title')
     &nbsp;&nbsp;
     <a href="{{ url('/catalogoServicio') }}" data-toggle="tooltip" title="Regresar al catalógo de servicios"><i class="ico-green-cream fa fa-angle-left"></i></a>
     &nbsp;&nbsp;
-    {{ 'Editar servicio' }}
+    {{ 'Ver servicio' }}
 @endsection
 
 @section('contentheader_description')
-	{{ 'Editar el servicio' }}
+	{{ 'Ver información de un servicio en especifico' }}
 @endsection
 
 @section('main-content')
@@ -22,30 +22,30 @@
             <span>Por favor, complete los campos que son necesarios</span>
         </div>    
     @endif
-
-   <div class="container-fluid spark-screen">
-		</br>
+    <div class="container-fluid spark-screen">
+	    <!--<div class="row">
+	        <a href="" class="btn btn-info"><i class="fa fa-edit"></i> Editar</a>
+	        <a id="" data-remote="" class="btn btn-danger"><i class="fa fa-trash"></i> Eliminar</a>
+	    </div>-->
+   		<br>
 		<div class="row">
 			<div class="col">
-				<div class="box box-solid  box-cream">
-				    <div class="box-header with-border">
-				    	<i class="glyphicon glyphicon-pencil"></i>
-				        <h3 class="box-title">Editar servicio</h3>   
+				<div class="box box-solid box-cream">
+					<div class="box-header with-border">	
+				        <i class="glyphicon glyphicon-thumbs-up"></i>			          
+				        <h3 class="box-title">Datos del servicio</h3>
 				        <div class="box-tools pull-right">
 			                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
 			                </button>
-              			</div>                     
-				    </div>
+              			</div> 
+				    </div>	
 				    <!-- form -->
-            		<form id="editServicio" method="POST" action="{{ url('/catalogoServicio/'.$servicios->id) }}" >
-            			<input name="servicio" id="servicio" type="hidden" value="{{ $servicios->id }}">
-            			<input name="_method" type="hidden" value="PATCH">
+            		<form method="POST" action="/catalogoServicio/" >
 					    <div class="box-body">	
-							@include('catalogoServicio.partials.campos')
+							@include('catalogoServicio.partials.showDatos')
 						</div>
 						<div class="box-footer">
 							<div class="col-md-12 text-right">
-								<button type="submit" class="btn btn-primary editar"><i class="glyphicon glyphicon-save"></i> Guardar </button>
 					            <a class="btn btn-danger" href="{{ url('/catalogoServicio/') }}" role="button">
 					                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Salir
 					            </a>	 								

@@ -36,8 +36,7 @@ class CatalogoServicioController extends Controller
         return view('catalogoServicio.index')
         ->with('categorias', $categorias)
         ->with('servicios', $servicios)
-        ;
-        
+        ;   
     }
     
     public function create()
@@ -66,7 +65,11 @@ class CatalogoServicioController extends Controller
     {
         //Ver un servicio en especifico
         $servicio = servicio::findOrFail($id);
-        return "show";
+        $categorias= categoriaServicio::get();
+       return view('catalogoServicio.show')
+        ->with('servicio', $servicio)
+        ->with('categorias', $categorias)
+        ;
     }
 
     public function edit($id)
