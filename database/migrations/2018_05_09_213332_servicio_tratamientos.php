@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServicioTratamientosTable extends Migration
+class ServicioTratamientos extends Migration
 {
     /**
      * Run the migrations.
@@ -16,6 +16,10 @@ class CreateServicioTratamientosTable extends Migration
         Schema::create('servicio_tratamientos', function (Blueprint $table) {
             //Id de la tabla
             $table->increments('id');
+            //Datos de la tabla
+            $table->date('fechaI');
+            $table->date('fechaF');
+            $table->string('estado', 30);
 
             //Llaves foraneas
             $table->integer('servicio_id')->unsigned();

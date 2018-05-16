@@ -80,6 +80,8 @@ return array(
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\Http\\Requests\\catalogoServicio' => $baseDir . '/app/Http/Requests/catalogoServicio.php',
+    'App\\Http\\Requests\\categoria' => $baseDir . '/app/Http/Requests/categoria.php',
     'App\\Http\\Requests\\createPaciente' => $baseDir . '/app/Http/Requests/createPaciente.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

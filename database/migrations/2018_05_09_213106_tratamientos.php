@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTratamientosTable extends Migration
+class Tratamientos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,9 @@ class CreateTratamientosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tratamientos', function (Blueprint $table) {
+       Schema::create('tratamientos', function (Blueprint $table) {
             //Id de la tabla
             $table->increments('id');
-
-            //Campos de la tabla tratamientos
-            $table->integer('numeroCuenta');
-            $table->string('nombre', 255);
-            $table->date('fechaI');
-            $table->date('fechaF');
-            $table->float('total');
 
             //Llaves foraneas
             $table->integer('paciente_id')->unsigned();
@@ -33,6 +26,9 @@ class CreateTratamientosTable extends Migration
 
             $table->integer('historiaClinica_id')->unsigned();
             $table->foreign('historiaClinica_id')->references('id')->on('historia_clinicas');
+
+            $table->integer('estadoCuentas_id')->unsigned();
+            $table->foreign('estadoCuentas_id')->references('id')->on('estado_cuentas');
 
             //Campos autogenerados por el framework
             $table->timestamps();

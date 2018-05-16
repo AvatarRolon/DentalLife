@@ -43,7 +43,18 @@
             </li>
             <!--....................................................................................--> 
             <li class="treeview">
-                <a href="#"><i class='fa fa-book'></i> <span>Catálogo de servicios</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-heartbeat'></i> <span>Tratamientos</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('tratamientos') }}" ><i class='fa fa-heartbeat'></i><span>Tratamientos</span></a></li>
+                    <li><a href="{{ url('tratamientos/create') }}" ><i class='fa fa-plus'></i><span>Agregar tratamiento</span></a></li>
+                </ul>
+            </li>
+            <!--....................................................................................--> 
+            <li class="treeview">
+            <!--....................................................................................--> 
+            <li class="treeview">
+              <!--  <a href="#"><i class='fa fa-folder-open'></i> <span>Catálogo de servicios</span> <i class="fa fa-angle-left pull-right"></i></a>-->
+              <a href="#"><i class='fa fa-list-alt'></i> <span>Catálogo de servicios</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
                     <li><a href="{{ url('catalogoServicio') }}" ><i class='fa fa-book'></i><span>Catálogo de servicios</span></a></li>
                     <li><a href="{{ url('catalogoServicio/create') }}" ><i class='fa fa-plus'></i><span>Agregar servicio</span></a></li>
@@ -53,8 +64,8 @@
             <li class="treeview">
                 <a href="#"><i class='fa fa-credit-card-alt'></i> <span>Abono</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="" ><i class='fa fa-money'></i><span>Abono</span></a></li>
-                    <li><a href="" ><i class='fa fa-plus'></i><span>Agregar abono</span></a></li>
+                    <li><a href="{{ url('abono') }}" ><i class='fa fa-money'></i><span>Abono</span></a></li>
+                    <li><a href="{{ url('abono/create') }}" ><i class='fa fa-plus'></i><span>Agregar abono</span></a></li>
                 </ul>
             </li> 
             <!--....................................................................................--> 

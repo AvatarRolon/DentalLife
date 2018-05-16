@@ -19,7 +19,6 @@ class CitaController extends Controller
     public function create()
     {
         //Crear una lista de los pacientes
-        //$pacientes = paciente::pluck('nombre','id')->prepend('selecciona');
         $pacientes = paciente::get();
         return view('citas.create')
         ->with('pacientes', $pacientes)

@@ -27,7 +27,7 @@
 		<div class="col-md-6">
 			<div class="form-group {{ $errors->has('fecha') ? 'has-error' : '' }}">
 			   <div class="col-md-3">
-	                <label for="fechaNac">Fecha: <span class="ico-r-cream"><span></label>
+	                <label for="fechaCita">Fecha: <span class="ico-r-cream"><span></label>
 	            </div>
 	            <div class="col-md-5">
 	            	<div class="input-group date">
@@ -48,7 +48,7 @@
 		<div class="col-md-6">
 			<div class="form-group {{ $errors->has('horaI') ? 'has-error' : '' }}">
 			   <div class="col-md-3">
-	                <label for="fechaNac">De: <span class="ico-r-cream"><span></label>
+	                <label for="horaI">De: <span class="ico-r-cream"><span></label>
 	            </div>
 	            <div class="col-md-4">
 	            	<div class="input-group">
@@ -69,7 +69,7 @@
 		<div class="col-md-6">
 			<div class="form-group {{ $errors->has('horaF') ? 'has-error' : '' }}">
 			   <div class="col-md-3">
-	                <label for="fechaNac">a: <span class="ico-r-cream"><span></label>
+	                <label for="holaF">a: <span class="ico-r-cream"><span></label>
 	            </div>
 	            <div class="col-md-4">
 	            	<div class="input-group">

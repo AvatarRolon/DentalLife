@@ -10,12 +10,18 @@ class AbonoController extends Controller
     //
     public function index()
     {   
-      return "index";   
+        return view('abonos.index')
+        ; 
     }
     
     public function create()
     {
-       return "create";
+        //Obtener la fecha actual del sistema.
+        $fechaActual = new \DateTime();
+        
+        return view('abonos.create')
+        ->with('fechaActual', $fechaActual)
+        ;
     }
 
     public function store()

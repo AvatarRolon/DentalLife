@@ -16,12 +16,8 @@ class CreateEstadoCuentasTable extends Migration
         Schema::create('estado_cuentas', function (Blueprint $table) {
             //Id de la tabla
             $table->increments('id');
-
             //Campos de la tabla estado_cuentas
             $table->float('total');
-            $table->integer('estado');
-           
-
             //Llaves foraneas
             $table->integer('paciente_id')->unsigned();
             $table->foreign('paciente_id')->references('id')->on('pacientes');

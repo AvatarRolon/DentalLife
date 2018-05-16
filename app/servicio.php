@@ -22,6 +22,11 @@ class servicio extends Model
         'costo',
         'categoriaServ_id'
     ];
+    //.......................................................
+    public static function getServicios($id){        
+        $servicios = servicio::where('categoriaServ_id','=',$id)->get();
+        return $servicios;
+    }
     //..................................................................
 	public static function nuevoServicio(Request $request){
         ///////////////////////////////////////////////////////////////

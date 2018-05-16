@@ -15,6 +15,12 @@ Route::resource('catalogoServicio', 'CatalogoServicioController');
 Route::resource('categoriaServicio', 'CategoriaServicioController');
 /*Citas*/
 Route::resource('citas','CitaController');
+/*Abonos*/
+Route::resource('abono','AbonoController');
+/*Tratamientos*/
+Route::resource('tratamientos','TratamientoController');
+Route::get('/selectServicios/{id}','ServicioController@getServicios');
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Middleware para autentificación y protecci+on de rutas */
 Route::group(['middleware' => 'auth'], function () {

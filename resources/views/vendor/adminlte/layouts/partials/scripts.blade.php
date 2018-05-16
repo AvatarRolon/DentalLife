@@ -13,8 +13,11 @@
 <!-- Scripts de catálogo de servicio -->
 @include('catalogoServicio.partials.script')
 
-<!-- Scripts de catálogo de servicio -->
+<!-- Scripts de citas -->
 @include('citas.partials.script')
+
+<!-- Scripts de tratamientos -->
+@include('tratamiento.partials.script')
 
 <!--Select2-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
