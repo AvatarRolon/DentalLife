@@ -13,7 +13,7 @@
 						<div class="col-md-6">
 							<div class="form-group {{ $errors->has('paciente') ? 'has-error' : '' }}">
 								<div class="col-md-3">
-								                <label for="paciente_id">Paciente: <span class="ico-r-cream"><span></label>
+								    <label for="paciente_id">Paciente: <span class="ico-r-cream"><span></label>
 								</div>
 								<div class="col-md-6">
 					            	<select class="form-control" id="paciente" name="paciente">
@@ -84,7 +84,6 @@
 				  	</div>
 				  	<div class=" row cuerpo">
 				    	<fieldset id="fieldset" class="checkboxT">
-							<!--Se realiza en el script-->
 						</fieldset>
 				  	</div>
 				</div>
@@ -111,6 +110,7 @@
 			                    <th class="text-center bgTh " >Fecha de inicio</th>
 			                    <th class="text-center bgTh " >Fecha final</th>
 			                    <th class="text-center bgTh " >Costo</th>
+			                    <th class="text-center bgTh " >Opción</th>
 						    </tr>
 						  </thead>
 						  <tbody id="tbody">
