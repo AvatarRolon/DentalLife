@@ -31,7 +31,7 @@
                                 <a href="{{ url('catalogoServicio/'.$catalogo[$i]['serv'][$j]['id']) }}"><i class="ico-cream ico-b-cream fa fa-eye" data-toggle="tooltip" title="Ver servicio"></i></a>
 
                                 <a href="{{ url('catalogoServicio/'.$catalogo[$i]['serv'][$j]['id'].'/edit ') }}"><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar servicio"></i></a>
-                            <button type="submit" class="eliminar" id="{{$catalogo[$i]['serv'][$j]['id']}}">
+                                <button type="submit" class="eliminar" id="{{$catalogo[$i]['serv'][$j]['id']}}">
                                     <a><i class="ico-cream ico-r-cream fa fa-trash" data-toggle="tooltip" title="Borrar paciente"></i></a>
                                 </button>
                             </form>

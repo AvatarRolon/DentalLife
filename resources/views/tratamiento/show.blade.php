@@ -1,18 +1,18 @@
 @extends('adminlte::page')
 
 @section('htmlheader_title')
-	{{ 'DentalLife-Agregar tratamiento' }}
+	{{ 'DentalLife-Ver tratamiento' }}
 @endsection
 
 @section('contentheader_title')
     &nbsp;&nbsp;
-    <a href="{{ url('/tratamientos') }}" data-toggle="tooltip" title="Regresar a los tratamientos"><i class="ico-green-cream fa fa-angle-left"></i></a>
+    <a href="{{ url('/tratamientos') }}" data-toggle="tooltip" title="Regresar a la lista de tratamientos"><i class="ico-green-cream fa fa-angle-left"></i></a>
     &nbsp;&nbsp;
-    {{ 'Agregar tratamiento' }}
+    {{ 'Ver tratamiento' }}
 @endsection
 
 @section('contentheader_description')
-	{{ 'Agregue un nuevo tratamiento' }}
+	{{ 'Ver información de un tratamiento en especifico' }}
 @endsection
 
 @section('main-content')
@@ -23,28 +23,30 @@
         </div>    
     @endif
     <div class="container-fluid spark-screen">
-		</br>
+	    <!--<div class="row">
+	        <a href="" class="btn btn-info"><i class="fa fa-edit"></i> Editar</a>
+	        <a id="" data-remote="" class="btn btn-danger"><i class="fa fa-trash"></i> Eliminar</a>
+	    </div>-->
+   		<br>
 		<div class="row">
 			<div class="col">
 				<div class="box box-solid box-cream">
 					<div class="box-header with-border">	
-				        <i class="glyphicon glyphicon-pencil"></i>			          
-				        <h3 class="box-title">Registrar un nuevo tratamiento</h3>
+				        <i class="glyphicon glyphicon-thumbs-up"></i>			          
+				        <h3 class="box-title">Datos del tratamiento</h3>
 				        <div class="box-tools pull-right">
 			                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
 			                </button>
               			</div> 
 				    </div>	
-				   <!-- form -->
-            		<form method="POST" action="/tratamientos/" id="id_create" >
+				    <!-- form -->
+            		<form method="POST" action="/tratamientos/" >
 					    <div class="box-body">	
-							@include('tratamiento.partials.campos')
+							@include('tratamiento.partials.showDatos')
 						</div>
-						<div >
+						<div class="box-footer">
 							<div class="col-md-12 text-right">
-								</br>
-								<button type="submit" class="btn btn-primary " onclick="guardar()" id="id_create"><i class="glyphicon glyphicon-save"></i> Guardar </button>
-					            <a class="btn btn-danger" href="{{ url('/tratamientos') }}" role="button">
+					            <a class="btn btn-danger" href="{{ url('/tratamientos/') }}" role="button">
 					                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Salir
 					            </a>	 								
 							</div>							

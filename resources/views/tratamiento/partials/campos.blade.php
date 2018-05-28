@@ -37,7 +37,8 @@
 								    <label for="paciente_id">Historia Clinica: <span class="ico-r-cream"><span></label>
 								</div>
 								<div class="col-md-5">
-					            	<input type="text" class="form-control" placeholder="HKL123" DISABLED/>
+					            	<input type="text" class="form-control" placeholder="1" DISABLED/>
+					            	<input type="hidden" name="historiaClinica" value="1">
 								</div>
 							</div>
 						</div>
@@ -129,12 +130,14 @@
 					   <div class="input-group col-md-2">
 							<span class="input-group-addon">$</span>
 						    <input type="text" DISABLED class="form-control" id="total" name="total" value="0.00"/>
+						    <input type="hidden" name="totalT" id="totalT" value="0.00"/>
 						</div>
 					    <span class="text-danger">{{ $errors->first('total') }}</span>
 					</div>
 				</div>
 				<!--..........................................................................................-->
 		  	</div>
+		  	<input type="hidden" name="info" id="info" value=""/>
 		</div>
 	</div>
 </div>

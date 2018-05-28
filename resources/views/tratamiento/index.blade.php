@@ -32,7 +32,7 @@
 				        <h3 class="box-title">Listado de los tratamientos</h3>
 				    </div>			    
 				    <div class="box-body">					
-						
+						@include('tratamiento.partials.tabla')
 					</div>					
 				</div>   
 			</div> 	

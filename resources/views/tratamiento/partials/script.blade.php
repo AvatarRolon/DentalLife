@@ -22,7 +22,7 @@
 	});
 	//.............................................................................................
 	function marcar(id) {
-		console.log(id);
+		console.log($("#tbody>tr"));
 		if (document.getElementById(id).checked){
 			//Optener la descripción y el costo
 			var split = (document.getElementById(id).value).split('|'); // split al nombre y costo del tratamiento
@@ -40,12 +40,12 @@
 			//.......Fecha de inicio............
 			var td2 = document.createElement("td");
 			td2.append('');
-			td2.id="fechaI"+id;
+			td2.id="fechaI/"+id;
 			tr.appendChild(td2);
 			//.......Fecha final.......
 			var td3 = document.createElement("td");
 			td3.append('');
-			td3.id="fechaF"+id;
+			td3.id="fechaF/"+id;
 			tr.appendChild(td3);
 			//.........Costo......
 			var td4 = document.createElement("td");
@@ -57,13 +57,16 @@
 			tr.appendChild(td5);
 			//...Agregar todos lo campos a la fila....
 			tblBody.appendChild(tr);
+			//Modificar el total del input y hidden
 			document.getElementById("total").value= parseInt(document.getElementById("total").value)+parseInt(costo);
-			console.log(document.getElementById("total").value);
+			document.getElementById("totalT").value= parseInt(document.getElementById("totalT").value)+parseInt(costo);
 		}else{
 			//Buscar el tr seleccionado para eliminar
 			var tr="tr"+id;
 			var auxCosto =  parseInt(document.getElementById(tr).childNodes[3].textContent.substring(1));
+			//Restar el servicio al tratamietno total 
 			document.getElementById("total").value= parseInt(document.getElementById("total").value)-parseInt(auxCosto);
+			document.getElementById("totalT").value= parseInt(document.getElementById("totalT").value)-parseInt(auxCosto);
 			document.getElementById(tr).remove();
 		}
 	}
@@ -73,22 +76,22 @@
 	 	document.getElementById("edit_button"+no).style.display="none";
 	 	document.getElementById("save_button"+no).style.display="block";
 		
-		var fechaI=document.getElementById("fechaI"+no);
-		var fechaF=document.getElementById("fechaF"+no);
+		var fechaI=document.getElementById("fechaI/"+no);
+		var fechaF=document.getElementById("fechaF/"+no);
 			
 		var fechaI_data=fechaI.innerHTML;
 		var fechaF_data=fechaF.innerHTML;
 		fechaI.innerHTML="<input class='form-control' type='date' id='fechaI_text"+no+"' value='"+fechaI_data+"'>";
-		fechaF.innerHTML="<input class='form-control' type='date' id='fechaI_text"+no+"' value='"+fechaF_data+"'>";
+		fechaF.innerHTML="<input class='form-control' type='date' id='fechaF_text"+no+"' value='"+fechaF_data+"'>";
 	}
 	//.............................................................................
 	//Guardar las fechas de incio y finalizacion modificados 
 	function save_row(no){
 		var fechaI_val=document.getElementById("fechaI_text"+no).value;
-	 	var fechaF_val=document.getElementById("fechaI_text"+no).value;
+	 	var fechaF_val=document.getElementById("fechaF_text"+no).value;
 
-	 	document.getElementById("fechaI"+no).innerHTML=fechaI_val;
-	 	document.getElementById("fechaF"+no).innerHTML=fechaF_val;
+	 	document.getElementById("fechaI/"+no).innerHTML=fechaI_val;
+	 	document.getElementById("fechaF/"+no).innerHTML=fechaF_val;
 
 	 	document.getElementById("edit_button"+no).style.display="inline-block";
 	 	document.getElementById("save_button"+no).style.display="none";
@@ -98,5 +101,16 @@
 		  text: "Las fechas han sido agregadas",
 		  icon: "success",
 		});
+	}
+	function guardar(){
+		var tds = $("#tbody>tr");
+		for (var i=0; i < tds.length; i++) { 
+			var FI =  tds[i].childNodes[1].textContent;
+			var FF = tds[i].childNodes[2].textContent;
+			var auxid = (tds[i].childNodes[2].id).split('/')
+			var id = auxid[1];
+			var trama = id+"/"+FI+"/"+FF+"|";
+			document.getElementById("info").value=document.getElementById("info").value+trama;
+		}
 	}
 </script>

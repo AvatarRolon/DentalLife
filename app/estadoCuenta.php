@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class estadoCuenta extends Model
 {
-     protected $fillable = [
+    protected $fillable = [
         'total',
-        'estado',
         'paciente_id'
     ];
 }
