@@ -7,6 +7,7 @@ Route::get('/', function () {
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Pacientes */
 Route::post('pacientes/update','PacienteController@actualizar');
+Route::get('pacientes/historia/{paciente}','HistoriaClinicaController@showHC');
 Route::resource('pacientes','PacienteController');
 
 /* Catalógo de servicios*/
@@ -20,14 +21,8 @@ Route::resource('abono','AbonoController');
 /*Tratamientos*/
 Route::resource('tratamientos','TratamientoController');
 Route::get('/selectServicios/{id}','ServicioController@getServicios');
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////
-/* Middleware para autentificación y protecci+on de rutas */
+/* Middleware para autentificación y protección de rutas */
 Route::group(['middleware' => 'auth'], function () {
-    //    Route::get('/link1', function ()    {
-//        // Uses Auth Middleware
-//    });
-
-    //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
-    #adminlte_routes
+    
 });

@@ -34,6 +34,7 @@ class paciente extends Model
         'calle',
         'colonia',
         'ocupacion',
+        'estado',
         'fechaIngreso',
         'foto'
     ];
@@ -44,7 +45,7 @@ class paciente extends Model
     }
 
     public static function getpacientes(){
-        $pacientes = paciente::orderBy('id','asc')->paginate(10);
+        $pacientes = paciente::where('estado','=','up')->orderBy('id','asc')->paginate(10);
         return $pacientes;
     }
 
@@ -68,6 +69,9 @@ class paciente extends Model
 
         //Variable edad
         $edad = 0;
+
+        //Variable para el estado del paciente
+        $estado = 'up';
 
         //Calculo de la edad
         if( $dayA >= $dayNac && $monthA >= $monthNac){
@@ -100,13 +104,14 @@ class paciente extends Model
                 $paciente -> numCasa = $request -> get('numCasa');
                 $paciente -> calle = $request -> get('calle');
                 $paciente -> colonia = $request -> get('colonia');
+                $paciente -> estado = $estado;
                 $paciente -> ocupacion = $request -> get('ocupacion');
                 $paciente -> fechaIngreso = $fechaActual;   
 
                 //Almacenar la foto
                 $fotoreturn = explode('/',$request->file('foto')->store('/public/avatar/pacientes'));
                 $foto = "/".$fotoreturn[1]."/".$fotoreturn[2]."/".$fotoreturn[3];               
-                $paciente -> foto =  $foto; //Pendiente
+                $paciente -> foto =  $foto; //Pendiente            
 
                 //Guardar al paciente
                 $paciente -> save();
@@ -196,6 +201,24 @@ class paciente extends Model
 
             $exito = false; 
         }
+
+        return $exito;
+    }
+
+    public static function downPaciente($id){
+        try{
+            DB::beginTransaction();
+                $paciente = paciente::findOrFail($id);
+                
+                $paciente -> estado = 'down';
+
+                $paciente -> save();
+            DB::commit();
+            $exito = true;
+        }catch(Exception $e){
+            DB::rollback();
+            $exito = false;
+        }        
 
         return $exito;
     }

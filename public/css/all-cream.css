@@ -73,8 +73,8 @@ label{
 .btn-b-cream.active,
 .open > .dropdown-toggle.btn-b-cream{
   color: #fff;
-  background-color: rgb(78, 211, 255);
-  border-color: rgb(34, 200, 255);
+  background-color: #47B7B1;
+  border-color: #47B7B1;
 }
 .btn-b-cream:active,
 .btn-b-cream.active,

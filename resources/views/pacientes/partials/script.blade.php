@@ -12,7 +12,7 @@
                 {data: 'ocupacion', name: 'ocupacion', className: "text-center"},
                 {data: 'edad', name: 'edad', className: "text-center"},
                 {data: 'sexo', name: 'sexo', className: "text-center"},
-                { data: 'action', name: 'sexo', className: "text-center"}
+                {data: 'action', name: 'sexo', className: "text-center"}
             ],
             language: {
                 processing:     "Procesando",

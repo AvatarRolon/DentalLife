@@ -22,7 +22,7 @@ class PacienteController extends Controller
     //Index de pacientes
     public function index(Request $request){       
         if($request->ajax()){
-            $pacientes = paciente::select(['id','nombre','telefono','ocupacion','edad','sexo']);
+            $pacientes = paciente::select(['id','nombre','telefono','ocupacion','edad','sexo'])->where('estado','=','up');
  
             return DataTables::of($pacientes)
             ->addColumn('action',function ($pacientes){
@@ -30,7 +30,7 @@ class PacienteController extends Controller
                         &nbsp;
                         <a href="/pacientes/'.$pacientes -> id.'/edit"><i class="ico-cream ico-b-cream fa fa-edit" data-toggle="tooltip" title="Editar paciente"></i></a>
                         &nbsp;
-                        <a><i class="ico-cream ico-b-cream fa fa-history" data-toggle="tooltip" title="Ver Historia Cl&iacute;nica"></i></a>
+                        <a href="/pacientes/historia/'.$pacientes -> id.'"><i class="ico-cream ico-b-cream fa fa-history" data-toggle="tooltip" title="Ver Historia Cl&iacute;nica"></i></a>
                         &nbsp;
                         <a id="btnDeletePaciente" onclick="deletePaciente('.$pacientes -> id.')" data-remote="'.$pacientes -> id.'"><i class="ico-cream ico-r-cream fa fa-trash" data-toggle="tooltip" title="Borrar paciente"></i></a>';
             })
@@ -77,11 +77,11 @@ class PacienteController extends Controller
         return view('pacientes.partials.show')
         ->with('paciente',$paciente);
         ;
-    }
+    }    
 
     //Eliminar un paciente
     public function destroy($id){
-        $booleanDelete =  paciente::deletePaciente($id);
+        $booleanDelete =  paciente::downPaciente($id);
 
         if($booleanDelete){
             alert()->success('El paciente ha sido eliminado con éxito','Éxito');

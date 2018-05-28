@@ -5,7 +5,7 @@
     </div>			    
     <div class="box-body">	
         <div class="container-fluid spark-screen">                        
-            <div class="form-group full-width">
+            <div class="form-group full-width {{ $errors->has('colonia') ? 'has-error' : '' }}">
                 @if (count($errors) > 0)
                     <div class="row">
                     <div class="col-md-2"></div>
@@ -22,7 +22,7 @@
             </div>
             <br>
             <br>
-            <div class="form-group full-width">  
+            <div class="form-group full-width {{ $errors->has('calle') ? 'has-error' : '' }}">  
                 @if (count($errors) > 0)
                     <div class="row">
                     <div class="col-md-2"></div>
@@ -39,7 +39,7 @@
             </div>   
             <br>
             <br>
-            <div class="form-group full-width"> 
+            <div class="form-group full-width {{ $errors->has('numCasa') ? 'has-error' : '' }}"> 
                 @if (count($errors) > 0)
                     <div class="row">
                     <div class="col-md-2"></div>

@@ -7,6 +7,11 @@
 <!-- Sweet Alert -->
 <script src="{{ asset('/js/sweetalert.min.js') }}" type="text/javascript"></script>
 
+<!-- FullCalendar plugin -->
+<script src="{{ asset('/js/moment.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/fullcalendar.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/js/es.js') }}" type="text/javascript"></script>
+
 <!-- Scripts de pacientes -->
 @include('pacientes.partials.script')
 

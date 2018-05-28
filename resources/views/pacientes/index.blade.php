@@ -1,10 +1,22 @@
-@extends('adminlte::page') 
+@extends('adminlte::page')
+
+@section('htmlheader_title')
+	{{ 'DentalLife-Pacientes' }}
+@endsection
+
+@section('contentheader_title')
+	{{ 'Pacientes' }}
+@endsection
+
+@section('contentheader_description')
+	{{ 'Información de sus pacientes' }}
+@endsection
 
 @section('main-content')
 <div class="container-fluid spark-screen">
 	<div class="row">
 		<div class="col-md-12">
-			<a class="btn btn-info" href="{{ url('/pacientes/create') }}" role="button">
+			<a class="btn btn-info" style="background-color: #47B7B1;" href="{{ url('/pacientes/create') }}" role="button">
 				<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 				Agregar
 			</a>

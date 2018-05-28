@@ -5,7 +5,7 @@
     </div>			    
     <div class="box-body">	
         <div class="container-fluid spark-screen">                        
-            <div class="form-group full-width">
+            <div class="form-group full-width {{ $errors->has('CURP') ? 'has-error' : '' }}">
                 @if (count($errors) > 0)
                     <div class="row">
                     <div class="col-md-2"></div>
@@ -21,7 +21,7 @@
                 <input type="text" class="form-control" id="CURP" name="CURP" placeholder="CURP" autocomplete="off" max="18" value="{{ old('CURP', isset($paciente) ? $paciente->CURP : '') }}" required  />
             </div>
             <br><br>
-            <div class="form-group full-width">  
+            <div class="form-group full-width {{ $errors->has('nombre') ? 'has-error' : '' }} {{ $errors->has('appat') ? 'has-error' : '' }}">  
                 @if (count($errors) > 0)
                     <div class="row">
                         <div class="col-md-2"></div>
@@ -67,7 +67,7 @@
                 <input type="text" class="form-control" name="ocupacion" id="ocupacion" placeholder="Ocupaci&oacute;n" autocomplete="off" max="25" value="{{ old('ocupacion', isset($paciente) ? $paciente->ocupacion : '') }}"required/>
             </div>
             <br><br>
-            <div class="form-group full-width">
+            <div class="form-group full-width {{ $errors->has('fechaNac') ? 'has-error' : '' }}">
                 @if (count($errors) > 0)
                     <div class="row">
                     <div class="col-md-2"></div>
@@ -83,7 +83,7 @@
                 <input type="date" class="form-control" name="fechaNac" id="fechaNac" placeholder="DD/MM/AAAA" required value="{{ old('fechaNac', isset($paciente) ? $paciente->fechaNac : '') }}"/>
             </div>
             <br><br>
-            <div class="form-group full-width">
+            <div class="form-group full-width {{ $errors->has('sexo') ? 'has-error' : '' }}">
                 @if (count($errors) > 0)
                     <div class="row">
                     <div class="col-md-2"></div>

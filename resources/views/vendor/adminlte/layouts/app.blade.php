@@ -30,7 +30,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-cream sidebar-mini">
+<body class="fixed skin-cream sidebar-mini">
 <div id="app">
     <div class="wrapper">
 

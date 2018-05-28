@@ -32,6 +32,7 @@ class CreatePacientesTable extends Migration
             $table->string('calle', 50);
             $table->string('colonia', 25);
             $table->string('ocupacion', 25);
+            $table->string('estado',4);
             $table->date('fechaIngreso');
             $table->string('foto')->default('default.jpg');
 

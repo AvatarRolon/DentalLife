@@ -41,7 +41,7 @@
                 <!-- Botones de envío -->
                 <div class="form-group">
                     <button class="btn btn-primary" id="agregarPaciente" type="submit"><i class="glyphicon glyphicon-ok"></i> Agregar paciente</button>
-                    <a href="{{ url('/pacientes') }}" class="btn btn-default" ><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+                    <a href="{{ url('/pacientes') }}" class="btn btn-danger" ><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
                 </div>
             </form>
         </div>
