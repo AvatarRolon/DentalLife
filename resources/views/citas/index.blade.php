@@ -13,16 +13,16 @@
 @endsection
 
 @section('main-content')
-   <!--div class="row">
+   <div class="row">
         <div class="col-md-12">
             <a class="btn btn-info" href="{{ url('citas/create') }}" role="button" style="background-color: #47B7B1;">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 Agendar
             </a>
-            <!--button type="button" class="btn btn-primary" data-toggle="modal" id="imprimir"><i class="glyphicon glyphicon-print"></i> Imprimir</button>
+            <!--button type="button" class="btn btn-primary" data-toggle="modal" id="imprimir"><i class="glyphicon glyphicon-print"></i> Imprimir</button-->
         </div>
     </div>
-    <br-->
+    <br>
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col">

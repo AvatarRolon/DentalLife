@@ -82,7 +82,7 @@
                             <div class="tabsHC">
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li role="presentation" class="active"><a href="#tratamientos" aria-controls="tratamientos" role="tab" data-toggle="tab">Tratamientos</a></li>
-                                    <li role="presentation"><a href="#odontograma" aria-controls="odontograma" role="tab" data-toggle="tab">odontograma</a></li>
+                                    <li role="presentation"><a href="#odontograma" aria-controls="odontograma" role="tab" data-toggle="tab">Odontograma</a></li>
                                     <li role="presentation"><a href="#notas" aria-controls="notas" role="tab" data-toggle="tab">Notas</a></li>
                                     <li role="presentation"><a href="#alertaClinica" aria-controls="alertaClinica" role="tab" data-toggle="tab">Alertas Clínicas</a></li>                                    
                                 </ul>
@@ -104,21 +104,21 @@
                                                         <td>2015-05-27</td>
                                                         <td>2017-05-27</td>
                                                         <td>Finalizado</td>
-                                                        <td>Inserte nombre de tratamiento</td>
+                                                        <td>Consulta diagnostica</td>
                                                     </tr>
                                                     <tr class="text-center danger">
                                                         <td>2</td>
                                                         <td>2015-05-27</td>
                                                         <td>2017-05-27</td>
                                                         <td>Cancelado</td>
-                                                        <td>Inserte nombre de tratamiento</td>
+                                                        <td>Extracción diente anterior</td>
                                                     </tr>
                                                     <tr class="text-center info">
                                                         <td>3</td>
                                                         <td>2015-05-27</td>
                                                         <td>2017-05-27</td>
                                                         <td>En Proceso</td>
-                                                        <td>Inserte nombre de tratamiento</td>
+                                                        <td>Amalgama</td>
                                                     </tr>
                                                 </table>
                                             </div>

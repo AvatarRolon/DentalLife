@@ -36,7 +36,7 @@
               			</div> 
 				    </div>	
 				    <!-- form -->
-            		<form method="POST" action="/citas/" >
+            		<form method="POST" id="nuevaCita" action="/citas/store" >
 					    <div class="box-body">	
 							@include('citas.partials.campos')
 						</div>

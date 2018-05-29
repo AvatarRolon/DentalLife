@@ -12,13 +12,34 @@
 	            	<select class="form-control" id="paciente" name="paciente">
 			    		<option value="">Buscar paciente</option>
 			    		@foreach($pacientes as $pacientes)
-				    		<option value="{{ $pacientes->id }}" @if(old('paciente', isset($cita) ? $cita->paciente_id : '') == $pacientes->id) {{ 'selected' }} @endif>{{ $pacientes->nombre."  ".$pacientes->apPat }}</option>
+				    		<option value="{{ $pacientes->id }}" @if(old('paciente', isset($cita) ? $cita->paciente_id : '') == $pacientes->id) {{ 'selected' }} @endif >{{ $pacientes->nombre."  ".$pacientes->apPat }}</option>
 				    	@endforeach
 		    		</select>
 	            </div>
 			</div>
 		</div>
 		<h1 class="label label-danger text-center">{{ $errors->first('paciente') }}</h1>
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="form-group full-width">
+		<div class="col-md-6">
+			<div class="form-group {{ $errors->has('asunto') ? 'has-error' : '' }}">
+			   <div class="col-md-3">
+	                <label for="asunto">Asunto: <span class="ico-r-cream"><span></label>
+	            </div>
+	           <div class="col-md-6">
+						<div class="input-group">
+							<span class="input-group-addon">
+								<span class="fa fa-question"></span>
+							</span>
+							<input type="text" class="form-control" id="asunto" name="asunto" value="{{ old('asunto', isset($cita) ? $cita->asunto : '') }}"/>
+						</div>
+	            </div>
+			</div>
+		</div>
+		<h1 class="label label-danger text-center">{{ $errors->first('asunto') }}</h1>
 	</div>
 </div>
 <br>
@@ -34,7 +55,7 @@
 						<span class="input-group-addon">
 				            <span class="glyphicon glyphicon-calendar"></span>
 				        </span>
-					    <input type="date" class="form-control" id="fecha" name="fecha" value="{{ old('fecha', isset($citas) ? $cita->fecha : '') }}"/>
+					    <input type="date" class="form-control" id="fecha" name="fecha" value="{{ old('fecha', isset($cita) ? $cita->fecha : '') }}"/>
 					</div>
 	            </div>
 			</div>
@@ -55,7 +76,7 @@
 						<span class="input-group-addon">
 				            <span class="glyphicon glyphicon-time"></span>
 				        </span>
-					    <input type="time" class="form-control" id="horaI" name="horaI" value="{{ old('horaI', isset($citas) ? $cita->horaI : '') }}"/>
+					    <input type="time" class="form-control" id="horaI" name="horaI" value="{{ old('horaI', isset($cita) ? $cita->horaI : '') }}"/>
 					</div>
 	            </div>
 			</div>
@@ -76,7 +97,7 @@
 						<span class="input-group-addon">
 				            <span class="glyphicon glyphicon-time"></span>
 				        </span>
-					    <input type="time" class="form-control" id="horaF" name="horaF" value="{{ old('horaF', isset($citas) ? $cita->horaF : '') }}"/>
+					    <input type="time" class="form-control" id="horaF" name="horaF" value="{{ old('horaF', isset($cita) ? $cita->horaF : '') }}"/>
 					</div>
 	            </div>
 			</div>

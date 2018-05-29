@@ -15,6 +15,8 @@ Route::resource('catalogoServicio', 'CatalogoServicioController');
 /*Categoria de los servicios*/
 Route::resource('categoriaServicio', 'CategoriaServicioController');
 /*Citas*/
+Route::get('citas/getcitas','CitaController@getCitas');
+Route::post('citas/store','CitaController@guardar');
 Route::resource('citas','CitaController');
 /*Abonos*/
 Route::resource('abono','AbonoController');

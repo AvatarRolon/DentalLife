@@ -1,7 +1,7 @@
 @extends('adminlte::layouts.auth')
 
 @section('htmlheader_title')
-    Password recovery
+    Recuperar Contraseña
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
 
         <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url('/home') }}"><b>Admin</b>LTE</a>
+            <a href="{{ url('/home') }}"><b>Dental</b>Life</a>
         </div><!-- /.login-logo -->
 
         @if (session('status'))
@@ -32,7 +32,7 @@
         @endif
 
         <div class="login-box-body">
-            <p class="login-box-msg">Reset Password</p>
+            <p class="login-box-msg">Recuperar Contraseña</p>
             <form action="{{ url('/password/email') }}" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group has-feedback">
@@ -44,14 +44,14 @@
                     <div class="col-xs-2">
                     </div><!-- /.col -->
                     <div class="col-xs-8">
-                        <button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte_lang::message.sendpassword') }}</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">Enviar enlace</button>
                     </div><!-- /.col -->
                     <div class="col-xs-2">
                     </div><!-- /.col -->
                 </div>
             </form>
-
-            <a href="{{ url('/login') }}">Log in</a><br>
+            <br>
+            <a href="{{ url('/login') }}">Iniciar Sesión</a><br>
             <a href="{{ url('/register') }}" class="text-center">{{ trans('adminlte_lang::message.registermember') }}</a>
 
         </div><!-- /.login-box-body -->

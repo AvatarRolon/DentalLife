@@ -25,11 +25,13 @@ class TratamientoController extends Controller
                 "paciente" =>$paciente[0]->nombre." ".$paciente[0]->apPat." ".$paciente[0]->apMat
             ];
         }
+
         if(isset($tratamientos)){
             return view('tratamiento.index')
             ->with('tratamientos', $tratamientos)
             ;
         }
+        
         return view('tratamiento.index')
         ; 
     }
